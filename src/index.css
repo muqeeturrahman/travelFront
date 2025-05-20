@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.Toastify__toast {
+    border-radius: 8px !important;
+    font-family: inherit !important;
+  }
+  
+  .Toastify__toast--error {
+    background: #fee2e2 !important;
+    color: #991b1b !important;
+  }
+  
+  .Toastify__toast--success {
+    background: #dcfce7 !important;
+    color: #166534 !important;
+  }
+  
+  .Toastify__toast--info {
+    background: #ccd0d6 !important;
+    color: #1e40af !important;
+  }
+  

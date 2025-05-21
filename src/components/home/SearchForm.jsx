@@ -9,7 +9,7 @@ import { cities } from '../../constants/cities';
 import { currencies } from '../../constants/currencies';
 import TravelerDropdown from './TravelerDropdown';
 
-const API_URL = import.meta.env.VITE_API_URL || 'https://travey-backend.vercel.app';
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3008';
 
 const DEFAULT_CURRENCY = 'USD';
 
@@ -107,11 +107,11 @@ function SearchForm({ activeTab, onSearch, initialSearchParams }) {
   }, [flightData.currencyCode]);
 
   const handleCitySearch = useCallback((value, type) => {
-    const searchTerm = value.toLowerCase();
-    const filteredCities = cities.filter(city =>
-      city.name.toLowerCase().includes(searchTerm) ||
-      city.code.toLowerCase().includes(searchTerm)
-    );
+        const searchTerm = value.toLowerCase();
+    const filteredCities = cities      .filter(city =>
+        city.name.toLowerCase().includes(searchTerm) ||
+        city.code.toLowerCase().includes(searchTerm)
+      );
 
     if (type === "from") {
       setFromSuggestions(filteredCities);
@@ -309,7 +309,7 @@ function SearchForm({ activeTab, onSearch, initialSearchParams }) {
                     }}
                   >
                     {city.name} ({city.code})
-                  </div>
+                                      </div>
                 ))}
               </div>
             )}
@@ -353,7 +353,7 @@ function SearchForm({ activeTab, onSearch, initialSearchParams }) {
                     }}
                   >
                     {city.name} ({city.code})
-                  </div>
+                                      </div>
                 ))}
               </div>
             )}
@@ -367,7 +367,7 @@ function SearchForm({ activeTab, onSearch, initialSearchParams }) {
                 name="departureDate"
                 value={flightData.departureDate}
                 onChange={handleInputChange}
-                className="pl-10 pr-4 py-2 w-full border text-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                className="pl-10 pr-4 py-2 w-full border text-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required
               />
             </div>
@@ -379,7 +379,7 @@ function SearchForm({ activeTab, onSearch, initialSearchParams }) {
                   name="departureDate"
                   value={flightData.departureDate}
                   onChange={handleInputChange}
-                  className="px-4 py-2 w-full text-gray-700 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    className="px-4 py-2 w-full text-gray-700 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                   required
                 />
               </div>
@@ -389,7 +389,7 @@ function SearchForm({ activeTab, onSearch, initialSearchParams }) {
                   name="returnDate"
                   value={flightData.returnDate || ''}
                   onChange={handleInputChange}
-                  className="px-4 py-2 w-full text-gray-700 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    className="px-4 py-2 w-full text-gray-700 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                   required={tripType === 'roundtrip'}
                 />
               </div>

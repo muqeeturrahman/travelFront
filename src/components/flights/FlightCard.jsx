@@ -5,7 +5,7 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import BookingModal from './BookingModal';
 
-const API_URL = import.meta.env.VITE_API_URL || 'https://travey-backend.vercel.app';
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3008';
 
 const FlightCard = ({ flightOffer, searchParams }) => {
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);

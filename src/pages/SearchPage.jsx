@@ -8,7 +8,7 @@ import FilterSidebar from '../components/search/FilterSidebar';
 import FlightCard from '../components/flights/FlightCard';
 import Footer from '../components/home/Footer';
 
-const API_URL = import.meta.env.VITE_API_URL || 'https://travey-backend.vercel.app';
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3008';
 
 function SearchPage() {
   const location = useLocation();
@@ -266,7 +266,7 @@ function SearchPage() {
             {filteredFlightOffers?.length > 0 && (
               <div className="bg-white p-4 rounded-lg shadow-sm mb-6">
                 <h2 className="text-xl font-semibold text-gray-800">
-                  {filteredFlightOffers.length} flights found
+                  {pagination.total} flights found
                 </h2>
                 {flightDiscount > 0 && (
                   <p className="text-green-600 mt-2">

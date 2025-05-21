@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { Search, Calendar, UserPlus, MapPin } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import SearchForm from './SearchForm';
 
 function Hero() {
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState('hotels');
   
   const tabs = [
@@ -13,6 +15,15 @@ function Hero() {
     { id: 'cars', label: 'Cars', icon: <MapPin className="w-4 h-4" /> },
     { id: 'flights', label: 'Flights', icon: <MapPin className="w-4 h-4" /> },
   ];
+
+  const handleSearch = (searchParams) => {
+    // Navigate to search page with the search parameters
+    navigate('/search', {
+      state: {
+        searchParams
+      }
+    });
+  };
 
   return (
     <div className="relative h-[500px] bg-gradient-to-r from-blue-900 to-purple-900 flex items-center justify-center text-center ">
@@ -52,7 +63,10 @@ function Hero() {
           </div>
           
           {/* Search Form */}
-          <SearchForm activeTab={activeTab} />
+          <SearchForm 
+            activeTab={activeTab} 
+            onSearch={handleSearch}
+          />
         </div>
       </div>
     </div>

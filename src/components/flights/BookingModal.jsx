@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { X } from 'lucide-react';
+import PhoneInput, { isValidPhoneNumber } from 'react-phone-number-input';
+import 'react-phone-number-input/style.css';
 
 const BookingModal = ({ isOpen, onClose, onSubmit, flightData }) => {
   const [bookingDetails, setBookingDetails] = useState({
@@ -24,6 +26,8 @@ const BookingModal = ({ isOpen, onClose, onSubmit, flightData }) => {
     }
     if (!bookingDetails.phoneNumber) {
       newErrors.phoneNumber = 'Phone number is required';
+    } else if (!isValidPhoneNumber(bookingDetails.phoneNumber)) {
+      newErrors.phoneNumber = 'Please enter a valid phone number';
     }
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -62,7 +66,9 @@ const BookingModal = ({ isOpen, onClose, onSubmit, flightData }) => {
                 ...prev,
                 fullName: e.target.value
               }))}
-              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                errors.fullName ? 'border-red-500' : 'border-gray-300'
+              }`}
               placeholder="Enter your full name"
             />
             {errors.fullName && (
@@ -81,7 +87,9 @@ const BookingModal = ({ isOpen, onClose, onSubmit, flightData }) => {
                 ...prev,
                 email: e.target.value
               }))}
-              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                errors.email ? 'border-red-500' : 'border-gray-300'
+              }`}
               placeholder="Enter your email"
             />
             {errors.email && (
@@ -93,19 +101,30 @@ const BookingModal = ({ isOpen, onClose, onSubmit, flightData }) => {
             <label className="block text-sm font-medium text-gray-700 mb-1">
               Phone Number
             </label>
-            <input
-              type="tel"
-              value={bookingDetails.phoneNumber}
-              onChange={(e) => setBookingDetails(prev => ({
-                ...prev,
-                phoneNumber: e.target.value
-              }))}
-              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Enter your phone number"
-            />
-            {errors.phoneNumber && (
-              <p className="text-red-500 text-sm mt-1">{errors.phoneNumber}</p>
-            )}
+            <div className={`phone-input-container ${errors.phoneNumber ? 'has-error' : ''}`}>
+              <PhoneInput
+                international
+                countryCallingCodeEditable={false}
+                defaultCountry="US"
+                value={bookingDetails.phoneNumber}
+                onChange={(value) => {
+                  setBookingDetails(prev => ({
+                    ...prev,
+                    phoneNumber: value || ''
+                  }));
+                  if (errors.phoneNumber) {
+                    setErrors(prev => ({
+                      ...prev,
+                      phoneNumber: undefined
+                    }));
+                  }
+                }}
+                className="w-full"
+              />
+              {errors.phoneNumber && (
+                <p className="text-red-500 text-sm mt-1">{errors.phoneNumber}</p>
+              )}
+            </div>
           </div>
 
           <div className="mt-6">

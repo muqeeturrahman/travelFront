@@ -102,7 +102,7 @@ const FlightCard = ({ flightOffer, searchParams }) => {
         <div className="bg-blue-600 text-white px-6 py-3 rounded-t-lg flex justify-between items-center">
           <div className="flex items-center">
             <DollarSign className="h-5 w-5 mr-2" />
-            <span className="text-2xl font-bold">${parseFloat(flightOffer.price.total).toFixed(2)}</span>
+            <span className="text-2xl font-bold">{parseFloat(flightOffer.price.total).toFixed(2)}</span>
             <span className="ml-2 text-sm opacity-75">per person</span>
           </div>
           <button

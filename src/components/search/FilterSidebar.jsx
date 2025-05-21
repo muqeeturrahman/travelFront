@@ -1,216 +1,159 @@
 import React from 'react';
-import { Search } from 'lucide-react';
+import PropTypes from 'prop-types';
+import { Sliders, Clock, Plane, DollarSign } from 'lucide-react';
 
-const FilterSidebar = () => {
+const FilterSidebar = ({ filters, onFilterChange }) => {
+  const formatPrice = (price) => `$${Math.round(price)}`;
+
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md">
+    <div className="bg-white rounded-lg shadow-sm p-4">
+      <div className="flex items-center gap-2 mb-6">
+        <Sliders className="h-5 w-5 text-blue-600" />
+        <h2 className="text-lg font-semibold">Filters</h2>
+      </div>
+
+      {/* Price Range Filter */}
       <div className="mb-6">
-        <div className="font-medium text-lg mb-4">Search by property name</div>
-        <div className="relative">
+        <h3 className="text-sm font-medium text-gray-700 mb-3 flex items-center gap-2">
+          <DollarSign className="h-4 w-4" />
+          Price Range
+        </h3>
+        <div className="space-y-2">
+          <div className="flex justify-between text-sm text-gray-600">
+            <span>{formatPrice(filters.priceRange[0])}</span>
+            <span>{formatPrice(filters.priceRange[1])}</span>
+          </div>
           <input
-            type="text"
-            placeholder="e.g. Best Western"
-            className="w-full px-4 py-2 pl-10 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-            <Search className="h-5 w-5 text-gray-400" />
-          </div>
-        </div>
-      </div>
-
-      <div className="mb-6">
-        <div className="font-medium text-lg mb-4">Deals</div>
-        <div className="space-y-2">
-          <label className="flex items-center">
-            <input type="checkbox" className="rounded text-blue-600 focus:ring-blue-500 h-4 w-4" />
-            <span className="ml-2 text-gray-700">Free cancellation</span>
-          </label>
-          <label className="flex items-center">
-            <input type="checkbox" className="rounded text-blue-600 focus:ring-blue-500 h-4 w-4" />
-            <span className="ml-2 text-gray-700">Reserve now, pay at stay</span>
-          </label>
-          <label className="flex items-center">
-            <input type="checkbox" className="rounded text-blue-600 focus:ring-blue-500 h-4 w-4" />
-            <span className="ml-2 text-gray-700">Properties with special offers</span>
-          </label>
-        </div>
-      </div>
-
-      <div className="mb-6">
-        <div className="font-medium text-lg mb-4">Popular Filters</div>
-        <div className="space-y-2">
-          <label className="flex items-center justify-between">
-            <div className="flex items-center">
-              <input type="checkbox" className="rounded text-blue-600 focus:ring-blue-500 h-4 w-4" />
-              <span className="ml-2 text-gray-700">Breakfast Included</span>
-            </div>
-            <span className="text-gray-500 text-sm">92</span>
-          </label>
-          <label className="flex items-center justify-between">
-            <div className="flex items-center">
-              <input type="checkbox" className="rounded text-blue-600 focus:ring-blue-500 h-4 w-4" />
-              <span className="ml-2 text-gray-700">WiFi Included</span>
-            </div>
-            <span className="text-gray-500 text-sm">45</span>
-          </label>
-          <label className="flex items-center justify-between">
-            <div className="flex items-center">
-              <input type="checkbox" className="rounded text-blue-600 focus:ring-blue-500 h-4 w-4" />
-              <span className="ml-2 text-gray-700">Airport Transfer</span>
-            </div>
-            <span className="text-gray-500 text-sm">21</span>
-          </label>
-          <label className="flex items-center justify-between">
-            <div className="flex items-center">
-              <input type="checkbox" className="rounded text-blue-600 focus:ring-blue-500 h-4 w-4" />
-              <span className="ml-2 text-gray-700">5 Star</span>
-            </div>
-            <span className="text-gray-500 text-sm">679</span>
-          </label>
-        </div>
-      </div>
-
-      <div className="mb-6">
-        <div className="font-medium text-lg mb-4">Nightly Price</div>
-        <div className="mb-4">
-          <div className="flex justify-between mb-2">
-            <span className="text-gray-600 text-sm">$0</span>
-            <span className="text-gray-600 text-sm">$500</span>
-          </div>
-          <input 
-            type="range" 
-            min="0" 
-            max="500" 
-            defaultValue="250" 
-            className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer" 
+            type="range"
+            min={filters.minPrice}
+            max={filters.maxPrice}
+            value={filters.priceRange[1]}
+            onChange={(e) => onFilterChange('priceRange', [filters.minPrice, Number(e.target.value)])}
+            className="w-full"
           />
         </div>
       </div>
 
+      {/* Stops Filter */}
       <div className="mb-6">
-        <div className="font-medium text-lg mb-4">Amenities</div>
+        <h3 className="text-sm font-medium text-gray-700 mb-3 flex items-center gap-2">
+          <Plane className="h-4 w-4" />
+          Stops
+        </h3>
         <div className="space-y-2">
-          <label className="flex items-center justify-between">
-            <div className="flex items-center">
-              <input type="checkbox" className="rounded text-blue-600 focus:ring-blue-500 h-4 w-4" />
-              <span className="ml-2 text-gray-700">Breakfast Included</span>
-            </div>
-            <span className="text-gray-500 text-sm">92</span>
-          </label>
-          <label className="flex items-center justify-between">
-            <div className="flex items-center">
-              <input type="checkbox" className="rounded text-blue-600 focus:ring-blue-500 h-4 w-4" />
-              <span className="ml-2 text-gray-700">WiFi Included</span>
-            </div>
-            <span className="text-gray-500 text-sm">45</span>
-          </label>
-          <label className="flex items-center justify-between">
-            <div className="flex items-center">
-              <input type="checkbox" className="rounded text-blue-600 focus:ring-blue-500 h-4 w-4" />
-              <span className="ml-2 text-gray-700">Airport Transfer</span>
-            </div>
-            <span className="text-gray-500 text-sm">21</span>
-          </label>
-          <label className="flex items-center justify-between">
-            <div className="flex items-center">
-              <input type="checkbox" className="rounded text-blue-600 focus:ring-blue-500 h-4 w-4" />
-              <span className="ml-2 text-gray-700">5 Star</span>
-            </div>
-            <span className="text-gray-500 text-sm">679</span>
-          </label>
-        </div>
-      </div>
-
-      <div className="mb-6">
-        <div className="font-medium text-lg mb-4">Star Rating</div>
-        <div className="flex gap-2">
-          {[1, 2, 3, 4, 5].map((star) => (
-            <button 
-              key={star} 
-              className="flex items-center justify-center h-8 w-8 rounded-full border border-gray-300 hover:border-blue-500 hover:bg-blue-50"
-            >
-              {star}
-            </button>
+          {['Non-stop', '1 Stop', '2+ Stops'].map((stop, index) => (
+            <label key={stop} className="flex items-center">
+              <input
+                type="checkbox"
+                checked={filters.stops.includes(index)}
+                onChange={() => {
+                  const newStops = filters.stops.includes(index)
+                    ? filters.stops.filter(s => s !== index)
+                    : [...filters.stops, index];
+                  onFilterChange('stops', newStops);
+                }}
+                className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+              />
+              <span className="ml-2 text-sm text-gray-600">{stop}</span>
+            </label>
           ))}
         </div>
       </div>
 
+      {/* Duration Filter */}
       <div className="mb-6">
-        <div className="font-medium text-lg mb-4">Guest Rating</div>
+        <h3 className="text-sm font-medium text-gray-700 mb-3 flex items-center gap-2">
+          <Clock className="h-4 w-4" />
+          Duration
+        </h3>
         <div className="space-y-2">
-          <label className="flex items-center justify-between">
-            <div className="flex items-center">
-              <input type="radio" name="guest-rating" className="text-blue-600 focus:ring-blue-500 h-4 w-4" />
-              <span className="ml-2 text-gray-700">Any</span>
-            </div>
-            <span className="text-gray-500 text-sm">92</span>
-          </label>
-          <label className="flex items-center justify-between">
-            <div className="flex items-center">
-              <input type="radio" name="guest-rating" className="text-blue-600 focus:ring-blue-500 h-4 w-4" />
-              <span className="ml-2 text-gray-700">Wonderful 4.5+</span>
-            </div>
-            <span className="text-gray-500 text-sm">45</span>
-          </label>
-          <label className="flex items-center justify-between">
-            <div className="flex items-center">
-              <input type="radio" name="guest-rating" className="text-blue-600 focus:ring-blue-500 h-4 w-4" />
-              <span className="ml-2 text-gray-700">Very good 4+</span>
-            </div>
-            <span className="text-gray-500 text-sm">21</span>
-          </label>
-          <label className="flex items-center justify-between">
-            <div className="flex items-center">
-              <input type="radio" name="guest-rating" className="text-blue-600 focus:ring-blue-500 h-4 w-4" />
-              <span className="ml-2 text-gray-700">Good 3.5+</span>
-            </div>
-            <span className="text-gray-500 text-sm">78</span>
-          </label>
+          <div className="flex justify-between text-sm text-gray-600">
+            <span>{Math.floor(filters.duration[0])}h</span>
+            <span>{Math.floor(filters.duration[1])}h</span>
+          </div>
+          <input
+            type="range"
+            min={filters.minDuration}
+            max={filters.maxDuration}
+            value={filters.duration[1]}
+            onChange={(e) => onFilterChange('duration', [filters.minDuration, Number(e.target.value)])}
+            className="w-full"
+          />
         </div>
       </div>
 
-      <div>
-        <div className="font-medium text-lg mb-4">Neighborhood</div>
-        <div className="space-y-2">
-          <label className="flex items-center justify-between">
-            <div className="flex items-center">
-              <input type="checkbox" className="rounded text-blue-600 focus:ring-blue-500 h-4 w-4" />
-              <span className="ml-2 text-gray-700">Central London</span>
-            </div>
-            <span className="text-gray-500 text-sm">92</span>
-          </label>
-          <label className="flex items-center justify-between">
-            <div className="flex items-center">
-              <input type="checkbox" className="rounded text-blue-600 focus:ring-blue-500 h-4 w-4" />
-              <span className="ml-2 text-gray-700">Bayswater</span>
-            </div>
-            <span className="text-gray-500 text-sm">45</span>
-          </label>
-          <label className="flex items-center justify-between">
-            <div className="flex items-center">
-              <input type="checkbox" className="rounded text-blue-600 focus:ring-blue-500 h-4 w-4" />
-              <span className="ml-2 text-gray-700">Westminster Borough</span>
-            </div>
-            <span className="text-gray-500 text-sm">31</span>
-          </label>
-          <label className="flex items-center justify-between">
-            <div className="flex items-center">
-              <input type="checkbox" className="rounded text-blue-600 focus:ring-blue-500 h-4 w-4" />
-              <span className="ml-2 text-gray-700">Kensington and Chelsea</span>
-            </div>
-            <span className="text-gray-500 text-sm">51</span>
-          </label>
-          <label className="flex items-center justify-between">
-            <div className="flex items-center">
-              <input type="checkbox" className="rounded text-blue-600 focus:ring-blue-500 h-4 w-4" />
-              <span className="ml-2 text-gray-700">Oxford Street</span>
-            </div>
-            <span className="text-gray-500 text-sm">21</span>
-          </label>
+      {/* Airlines Filter */}
+      <div className="mb-6">
+        <h3 className="text-sm font-medium text-gray-700 mb-3">Airlines</h3>
+        <div className="space-y-2 max-h-40 overflow-y-auto">
+          {filters.availableAirlines.map((airline) => (
+            <label key={airline} className="flex items-center">
+              <input
+                type="checkbox"
+                checked={filters.airlines.includes(airline)}
+                onChange={() => {
+                  const newAirlines = filters.airlines.includes(airline)
+                    ? filters.airlines.filter(a => a !== airline)
+                    : [...filters.airlines, airline];
+                  onFilterChange('airlines', newAirlines);
+                }}
+                className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+              />
+              <span className="ml-2 text-sm text-gray-600">{airline}</span>
+            </label>
+          ))}
         </div>
       </div>
+
+      {/* Travel Class Filter */}
+      <div className="mb-6">
+        <h3 className="text-sm font-medium text-gray-700 mb-3">Travel Class</h3>
+        <div className="space-y-2">
+          {['ECONOMY', 'PREMIUM_ECONOMY', 'BUSINESS', 'FIRST'].map((travelClass) => (
+            <label key={travelClass} className="flex items-center">
+              <input
+                type="radio"
+                name="travelClass"
+                value={travelClass}
+                checked={filters.travelClass === travelClass}
+                onChange={(e) => onFilterChange('travelClass', e.target.value)}
+                className="border-gray-300 text-blue-600 focus:ring-blue-500"
+              />
+              <span className="ml-2 text-sm text-gray-600">
+                {travelClass.split('_').map(word => 
+                  word.charAt(0) + word.slice(1).toLowerCase()
+                ).join(' ')}
+              </span>
+            </label>
+          ))}
+        </div>
+      </div>
+
+      {/* Reset Filters Button */}
+      <button
+        onClick={() => onFilterChange('reset')}
+        className="w-full py-2 px-4 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+      >
+        Reset Filters
+      </button>
     </div>
   );
+};
+
+FilterSidebar.propTypes = {
+  filters: PropTypes.shape({
+    priceRange: PropTypes.arrayOf(PropTypes.number).isRequired,
+    minPrice: PropTypes.number.isRequired,
+    maxPrice: PropTypes.number.isRequired,
+    stops: PropTypes.arrayOf(PropTypes.number).isRequired,
+    duration: PropTypes.arrayOf(PropTypes.number).isRequired,
+    minDuration: PropTypes.number.isRequired,
+    maxDuration: PropTypes.number.isRequired,
+    airlines: PropTypes.arrayOf(PropTypes.string).isRequired,
+    availableAirlines: PropTypes.arrayOf(PropTypes.string).isRequired,
+    travelClass: PropTypes.string.isRequired
+  }).isRequired,
+  onFilterChange: PropTypes.func.isRequired
 };
 
 export default FilterSidebar; 

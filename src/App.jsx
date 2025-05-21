@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage';
 import SearchPage from './pages/SearchPage';
 import FlightsPage from './pages/FlightsPage';
 import HotelListingCard from './components/search/HotelListingCard';
+import ConfirmationPage from './pages/ConfirmationPage';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -14,8 +15,8 @@ function App() {
     if (shouldReturnHome) {
       // Clear the flag
       localStorage.removeItem('returnToHome');
-      // Navigate to home
-      window.location.href = '/';
+      // Navigate to confirmation page instead of home
+      window.location.href = '/confirmation';
     }
   }, []);
 
@@ -44,9 +45,8 @@ function App() {
           <Route path="/search" element={<SearchPage />} />
           <Route path="/flights" element={<FlightsPage />} />
           <Route path="/hotel" element={<HotelListingCard />} />
+          <Route path="/confirmation" element={<ConfirmationPage />} />
         </Routes>
-        
-     
       </div>
     </Router>
   );

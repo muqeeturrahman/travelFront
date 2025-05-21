@@ -8,6 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { cities } from '../../constants/cities';
 import { currencies } from '../../constants/currencies';
 import TravelerDropdown from './TravelerDropdown';
+import { z } from 'zod';
 
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3008';
 
@@ -48,6 +49,45 @@ const extractAirportCode = (input) => {
   const match = input.match(/\(([A-Z]{3})\)/);
   return match ? match[1] : input;
 };
+
+// Create a Zod schema for city validation
+const citySchema = z.object({
+  name: z.string(),
+  code: z.string()
+});
+
+// Create a validation schema for the flight search form
+const flightSearchSchema = z.object({
+  originLocationCode: z.string().refine(
+    (value) => {
+      // Extract city and code from string like "New York (NYC)"
+      const match = value.match(/^(.+)\s*\(([A-Z]{3})\)$/);
+      if (!match) return false;
+      const [_, cityName, code] = match;
+      return cities.some(city => city.name === cityName.trim() && city.code === code);
+    },
+    { message: "Origin city must be selected from the dropdown" }
+  ),
+  destinationLocationCode: z.string().refine(
+    (value) => {
+      const match = value.match(/^(.+)\s*\(([A-Z]{3})\)$/);
+      if (!match) return false;
+      const [_, cityName, code] = match;
+      return cities.some(city => city.name === cityName.trim() && city.code === code);
+    },
+    { message: "Destination city must be selected from the dropdown" }
+  ),
+  departureDate: z.string().min(1, "Departure date is required"),
+  returnDate: z.string().optional(),
+  adults: z.number().min(1, "At least one adult is required"),
+  children: z.number().min(0).optional(),
+  infants: z.number().min(0).optional(),
+  max: z.number().optional(),
+  currencyCode: z.string().min(1, "Currency code is required"),
+  travelClass: z.string().optional(),
+  page: z.number().optional(),
+  limit: z.number().optional()
+});
 
 function SearchForm({ activeTab, onSearch, initialSearchParams }) {
   const navigate = useNavigate();
@@ -142,20 +182,23 @@ function SearchForm({ activeTab, onSearch, initialSearchParams }) {
     setLoading(true);
     setError(null);
 
-    const {
-      originLocationCode,
-      destinationLocationCode,
-      departureDate,
-      returnDate,
-      adults,
-      max,
-      currencyCode,
-      travelClass,
-      page,
-      limit
-    } = flightData;
-
     try {
+      // Validate the form data using Zod
+      const validatedData = flightSearchSchema.parse(flightData);
+
+      const {
+        originLocationCode,
+        destinationLocationCode,
+        departureDate,
+        returnDate,
+        adults,
+        max,
+        currencyCode,
+        travelClass,
+        page,
+        limit
+      } = validatedData;
+
       const originCode = extractAirportCode(originLocationCode);
       const destinationCode = extractAirportCode(destinationLocationCode);
 
@@ -186,19 +229,27 @@ function SearchForm({ activeTab, onSearch, initialSearchParams }) {
 
       if (returnDate) queryParams.append("returnDate", returnDate);
       if (travelClass) queryParams.append("travelClass", travelClass);
-      if (flightData.children) queryParams.append("children", flightData.children);
-      if (flightData.infants) queryParams.append("infants", flightData.infants);
+      if (validatedData.children) queryParams.append("children", validatedData.children);
+      if (validatedData.infants) queryParams.append("infants", validatedData.infants);
 
       const response = await axios.get(`${API_URL}/api/user/flightOffers?${queryParams.toString()}`);
 
       setFlightOffers(response.data.data);
 
-      onSearch({ ...flightData, tripType });
+      onSearch({ ...validatedData, tripType });
 
     } catch (err) {
-      const message = err.response?.data?.message || "Something went wrong while fetching flight offers";
-      setError(message);
-      console.error("Flight search error:", err);
+      if (err instanceof z.ZodError) {
+        // Handle Zod validation errors
+        const errorMessages = err.errors.map(error => error.message).join(', ');
+        toast.error(errorMessages);
+        setError(errorMessages);
+      } else {
+        // Handle other errors as before
+        const message = err.response?.data?.message || "Something went wrong while fetching flight offers";
+        setError(message);
+        console.error("Flight search error:", err);
+      }
     } finally {
       setLoading(false);
     }

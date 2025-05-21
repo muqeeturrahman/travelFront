@@ -9,7 +9,7 @@ import { cities } from '../../constants/cities';
 import { currencies } from '../../constants/currencies';
 import TravelerDropdown from './TravelerDropdown';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3008';
+const API_URL = import.meta.env.VITE_API_URL || 'https://travey-backend.vercel.app';
 
 const DEFAULT_CURRENCY = 'USD';
 

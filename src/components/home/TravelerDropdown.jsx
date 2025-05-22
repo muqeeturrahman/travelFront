@@ -1,9 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ReactDOM from 'react-dom';
 
-const TravelerDropdown = ({ flightData, handleInputChange, onClose }) => {
-  return (
-    <div className="absolute top-full left-0 mt-2 w-full bg-white border border-gray-300 rounded-md shadow-lg z-50 p-4 space-y-3">
+const TravelerDropdown = ({ flightData, handleInputChange, onClose, position }) => {
+  const dropdown = (
+    <div
+      className="bg-white border border-gray-300 rounded-md shadow-lg z-[9999] p-4 space-y-3"
+      style={{
+        position: 'absolute',
+        top: position?.top || 0,
+        left: position?.left || 0,
+        width: position?.width || 320,
+        minWidth: 240,
+        maxWidth: 400,
+      }}
+    >
       {/* Adults */}
       <div className="flex items-center justify-between">
         <div>
@@ -92,6 +103,7 @@ const TravelerDropdown = ({ flightData, handleInputChange, onClose }) => {
       </button>
     </div>
   );
+  return ReactDOM.createPortal(dropdown, document.body);
 };
 
 TravelerDropdown.propTypes = {
@@ -102,7 +114,12 @@ TravelerDropdown.propTypes = {
     travelClass: PropTypes.string
   }).isRequired,
   handleInputChange: PropTypes.func.isRequired,
-  onClose: PropTypes.func.isRequired
+  onClose: PropTypes.func.isRequired,
+  position: PropTypes.shape({
+    top: PropTypes.number,
+    left: PropTypes.number,
+    width: PropTypes.number
+  })
 };
 
 export default TravelerDropdown; 

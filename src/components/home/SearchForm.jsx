@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useMemo, useEffect } from 'react';
+import React, { useState, useCallback, useMemo, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { Search, MapPin, Calendar, UserPlus, DollarSign } from 'lucide-react';
 import axios from 'axios';
@@ -255,6 +255,9 @@ function SearchForm({ activeTab, onSearch, initialSearchParams }) {
     }
   }, [flightData, tripType, onSearch]);
 
+  const travelerInputRef = useRef(null);
+  const [travelerDropdownPosition, setTravelerDropdownPosition] = useState({ top: 0, left: 0, width: 320 });
+
   if (activeTab !== 'flights') return null;
 
   return (
@@ -445,8 +448,20 @@ function SearchForm({ activeTab, onSearch, initialSearchParams }) {
           <div className="relative col-span-full sm:col-span-1">
             <UserPlus className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
             <div
+              ref={travelerInputRef}
               className="pl-10 pr-4 py-2 w-full border rounded-md focus-within:ring-2 focus-within:ring-blue-500 bg-white cursor-pointer"
-              onClick={() => setShowTravelerDropdown(!showTravelerDropdown)}
+              onClick={() => {
+                if (!showTravelerDropdown) {
+                  // Calculate position
+                  const rect = travelerInputRef.current.getBoundingClientRect();
+                  setTravelerDropdownPosition({
+                    top: rect.bottom + window.scrollY,
+                    left: rect.left + window.scrollX,
+                    width: rect.width
+                  });
+                }
+                setShowTravelerDropdown(!showTravelerDropdown);
+              }}
             >
               {totalPassengers ? `${totalPassengers} Passenger${totalPassengers > 1 ? 's' : ''}` : 'Passengers'}
             </div>
@@ -456,6 +471,7 @@ function SearchForm({ activeTab, onSearch, initialSearchParams }) {
                 flightData={flightData}
                 handleInputChange={handleInputChange}
                 onClose={() => setShowTravelerDropdown(false)}
+                position={travelerDropdownPosition}
               />
             )}
           </div>

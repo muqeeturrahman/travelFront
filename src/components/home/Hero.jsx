@@ -1,23 +1,14 @@
 import React, { useState } from 'react';
-import { Search, Calendar, UserPlus, MapPin } from 'lucide-react';
+import { Plane } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import SearchForm from './SearchForm';
 
 function Hero() {
   const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState('hotels');
+  // Set flights as default active tab
+  const [activeTab] = useState('flights');
   
-  const tabs = [
-    { id: 'hotels', label: 'Hotels', icon: <MapPin className="w-4 h-4" /> },
-    { id: 'tours', label: 'Tours', icon: <MapPin className="w-4 h-4" /> },
-    { id: 'activity', label: 'Activity', icon: <MapPin className="w-4 h-4" /> },
-    { id: 'rentals', label: 'Rentals', icon: <MapPin className="w-4 h-4" /> },
-    { id: 'cars', label: 'Cars', icon: <MapPin className="w-4 h-4" /> },
-    { id: 'flights', label: 'Flights', icon: <MapPin className="w-4 h-4" /> },
-  ];
-
   const handleSearch = (searchParams) => {
-    // Navigate to search page with the search parameters
     navigate('/search', {
       state: {
         searchParams
@@ -26,7 +17,7 @@ function Hero() {
   };
 
   return (
-    <div className="relative h-[500px] bg-gradient-to-r from-blue-900 to-purple-900 flex items-center justify-center text-center ">
+    <div className="relative h-[500px] bg-gradient-to-r from-blue-900 to-purple-900 flex items-center justify-center text-center">
       {/* Background image overlay */}
       <div 
         className="absolute inset-0 z-0 opacity-30 bg-cover bg-center"
@@ -44,22 +35,14 @@ function Hero() {
           Discover amazing places at exclusive deals
         </p>
         
-        {/* Tabs and Search Form */}
+        {/* Search Form Container */}
         <div className="bg-white rounded-lg shadow-lg max-w-5xl mx-auto">
-          {/* Tabs */}
-          <div className="flex overflow-x-auto scrollbar-hide">
-            {tabs.map((tab) => (
-              <button
-                key={tab.id}
-                className={`flex items-center justify-center min-w-[100px] px-4 py-3 text-sm font-medium transition-colors ${
-                  activeTab === tab.id ? 'text-blue-600 border-b-2 border-blue-600' : 'text-gray-600 hover:bg-gray-50'
-                }`}
-                onClick={() => setActiveTab(tab.id)}
-              >
-                {tab.icon}
-                <span className="ml-2">{tab.label}</span>
-              </button>
-            ))}
+          {/* Single Tab Header */}
+          <div className="border-b border-gray-200">
+            <div className="flex items-center justify-center py-4">
+              <Plane className="h-5 w-5 text-blue-600" />
+              <span className="ml-2 font-semibold text-blue-600">Flight Search</span>
+            </div>
           </div>
           
           {/* Search Form */}

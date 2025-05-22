@@ -1,5 +1,6 @@
 import React from 'react';
 import { Globe, User, ChevronDown, Search } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import Logo from './Logo';
 
 function Navbar() {
@@ -10,12 +11,14 @@ function Navbar() {
           <Logo />
           <nav className="hidden md:flex">
             <ul className="flex space-x-6">
-              <li className="text-sm font-medium"><a href="/" className="hover:text-blue-400 transition-colors">Home</a></li>
               <li className="text-sm font-medium">
+                <Link to="/" className="hover:text-blue-400 transition-colors">Home</Link>
+              </li>
+              {/* <li className="text-sm font-medium">
                 <a href="#" className="flex items-center hover:text-blue-400 transition-colors">
                   Categories <ChevronDown className="ml-1 h-4 w-4" />
                 </a>
-              </li>
+              </li> */}
               <li className="text-sm font-medium">
                 <a href="#" className="flex items-center hover:text-blue-400 transition-colors">
                   Destinations <ChevronDown className="ml-1 h-4 w-4" />
@@ -27,7 +30,9 @@ function Navbar() {
                   Pages <ChevronDown className="ml-1 h-4 w-4" />
                 </a>
               </li> */}
-              <li className="text-sm font-medium"><a href="#" className="hover:text-blue-400 transition-colors">Contact</a></li>
+              <li className="text-sm font-medium">
+                <Link to="/contact" className="hover:text-blue-400 transition-colors">Contact</Link>
+              </li>
             </ul>
           </nav>
         </div>
@@ -48,11 +53,14 @@ function Navbar() {
           {/* <button className="hidden sm:flex items-center bg-blue-500 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors hover:bg-blue-600">
             Become An Expert
           </button> */}
-          {/* <button className="flex items-center bg-white text-[#0F172A] px-4 py-2 rounded-md text-sm font-medium">
-            <User className="h-4 w-4 mr-2" />
-            <span className="hidden sm:inline">Sign In / Register</span>
-            <span className="sm:hidden">Sign In</span>
-          </button> */}
+          <button className="flex items-center text-sm hover:text-blue-400 transition-colors">
+            <Globe className="h-4 w-4 mr-1" />
+            USD
+          </button>
+          <button className="flex items-center text-sm hover:text-blue-400 transition-colors">
+            <User className="h-4 w-4 mr-1" />
+            Sign In
+          </button>
           <button className="md:hidden">
             <Search className="h-5 w-5" />
           </button>

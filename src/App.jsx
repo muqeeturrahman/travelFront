@@ -5,6 +5,7 @@ import SearchPage from './pages/SearchPage';
 import FlightsPage from './pages/FlightsPage';
 import HotelListingCard from './components/search/HotelListingCard';
 import ConfirmationPage from './pages/ConfirmationPage';
+import ContactPage from './pages/ContactPage';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -46,6 +47,7 @@ function App() {
           <Route path="/flights" element={<FlightsPage />} />
           <Route path="/hotel" element={<HotelListingCard />} />
           <Route path="/confirmation" element={<ConfirmationPage />} />
+          <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </div>
     </Router>

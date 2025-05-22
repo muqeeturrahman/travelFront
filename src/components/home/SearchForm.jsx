@@ -259,17 +259,17 @@ function SearchForm({ activeTab, onSearch, initialSearchParams }) {
 
   return (
     <div className="relative" style={{ zIndex: 50 }}>
-      <form onSubmit={handleFlightSearch} className="p-4 space-y-4">
+      <form onSubmit={handleFlightSearch} className="p-4 space-y-6">
         {/* Trip Type and Currency Selection */}
-        <div className="flex justify-between items-center mb-4">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-0">
           {/* Trip Type Buttons */}
-          <div className="flex space-x-4">
+          <div className="flex space-x-2 sm:space-x-4 w-full sm:w-auto">
             {['oneway', 'roundtrip'].map((type) => (
               <button
                 key={type}
                 type="button"
                 onClick={() => handleTripTypeChange(type)}
-                className={`px-4 py-2 rounded-md border ${
+                className={`flex-1 sm:flex-none px-3 sm:px-4 py-2 text-sm sm:text-base rounded-md border ${
                   tripType === type 
                     ? 'bg-blue-600 text-white' 
                     : 'bg-white text-gray-700 border-gray-300'
@@ -281,11 +281,11 @@ function SearchForm({ activeTab, onSearch, initialSearchParams }) {
           </div>
 
           {/* Currency Selector */}
-          <div className="relative">
+          <div className="relative w-full sm:w-auto">
             <button
               type="button"
               onClick={() => setShowCurrencyDropdown(!showCurrencyDropdown)}
-              className="flex items-center space-x-2 px-3 py-2 border rounded-md hover:bg-gray-50"
+              className="w-full sm:w-auto flex items-center justify-center space-x-2 px-3 py-2 border rounded-md hover:bg-gray-50"
             >
               <DollarSign className="h-4 w-4 text-gray-500" />
               <span>{currentCurrency.code}</span>
@@ -321,9 +321,9 @@ function SearchForm({ activeTab, onSearch, initialSearchParams }) {
         </div>
 
         {/* Search Inputs */}
-        <div className="flex flex-wrap gap-4 items-end relative">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {/* From Input */}
-          <div className="relative flex-1 min-w-[180px]">
+          <div className="relative">
             <MapPin className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
             <input
               type="text"
@@ -340,13 +340,7 @@ function SearchForm({ activeTab, onSearch, initialSearchParams }) {
               required
             />
             {showFromSuggestions && fromSuggestions.length > 0 && (
-              <div className="absolute z-50 mt-1 w-full bg-white border border-gray-300 rounded-md shadow-lg overflow-y-auto"
-                style={{
-                  top: '100%',
-                  left: 0,
-                  maxHeight: '300px',
-                  boxShadow: '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)'
-                }}>
+              <div className="absolute z-50 mt-1 w-full bg-white border border-gray-300 rounded-md shadow-lg overflow-y-auto max-h-60">
                 {fromSuggestions.map((city, index) => (
                   <div
                     key={index}
@@ -360,14 +354,14 @@ function SearchForm({ activeTab, onSearch, initialSearchParams }) {
                     }}
                   >
                     {city.name} ({city.code})
-                                      </div>
+                  </div>
                 ))}
               </div>
             )}
           </div>
 
           {/* To Input */}
-          <div className="relative flex-1 min-w-[180px]">
+          <div className="relative">
             <MapPin className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
             <input
               type="text"
@@ -384,13 +378,7 @@ function SearchForm({ activeTab, onSearch, initialSearchParams }) {
               required
             />
             {showToSuggestions && toSuggestions.length > 0 && (
-              <div className="absolute z-50 mt-1 w-full bg-white border border-gray-300 rounded-md shadow-lg overflow-y-auto"
-                style={{
-                  top: 'calc(100% + 5px)',
-                  left: 0,
-                  maxHeight: '300px',
-                  boxShadow: '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)'
-                }}>
+              <div className="absolute z-50 mt-1 w-full bg-white border border-gray-300 rounded-md shadow-lg overflow-y-auto max-h-60">
                 {toSuggestions.map((city, index) => (
                   <div
                     key={index}
@@ -404,7 +392,7 @@ function SearchForm({ activeTab, onSearch, initialSearchParams }) {
                     }}
                   >
                     {city.name} ({city.code})
-                                      </div>
+                  </div>
                 ))}
               </div>
             )}
@@ -412,43 +400,49 @@ function SearchForm({ activeTab, onSearch, initialSearchParams }) {
 
           {/* Dates */}
           {tripType === 'oneway' ? (
-            <div className="relative flex-1 min-w-[180px]">
+            <div className="relative">
+              <Calendar className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
               <input
                 type="date"
                 name="departureDate"
                 value={flightData.departureDate}
                 onChange={handleInputChange}
-                                className="pl-10 pr-4 py-2 w-full border text-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="pl-10 pr-4 py-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 appearance-none"
                 required
+                min={new Date().toISOString().split('T')[0]}
               />
             </div>
           ) : (
-            <div className="flex flex-1 min-w-[300px] gap-2">
-              <div className="relative w-1/2">
+            <>
+              <div className="relative">
+                <Calendar className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
                 <input
                   type="date"
                   name="departureDate"
                   value={flightData.departureDate}
                   onChange={handleInputChange}
-                                    className="px-4 py-2 w-full text-gray-700 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="pl-10 pr-4 py-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 appearance-none"
                   required
+                  min={new Date().toISOString().split('T')[0]}
                 />
               </div>
-              <div className="relative w-1/2">
+              <div className="relative">
+                <Calendar className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
                 <input
                   type="date"
                   name="returnDate"
                   value={flightData.returnDate || ''}
                   onChange={handleInputChange}
-                                    className="px-4 py-2 w-full text-gray-700 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="pl-10 pr-4 py-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 appearance-none"
                   required={tripType === 'roundtrip'}
+                  min={flightData.departureDate || new Date().toISOString().split('T')[0]}
                 />
               </div>
-            </div>
+            </>
           )}
 
-          {/* Traveler Dropdown */}
-          <div className="relative flex-1 min-w-[180px]">
+          {/* Travelers */}
+          <div className="relative col-span-full sm:col-span-1">
             <UserPlus className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
             <div
               className="pl-10 pr-4 py-2 w-full border rounded-md focus-within:ring-2 focus-within:ring-blue-500 bg-white cursor-pointer"
@@ -468,33 +462,43 @@ function SearchForm({ activeTab, onSearch, initialSearchParams }) {
         </div>
 
         {/* Additional Options */}
-        <div className="flex items-center gap-4 mt-4">
-          <label className="flex items-center space-x-2">
-            <input type="checkbox" checked={addPlace} onChange={() => setAddPlace(!addPlace)} />
-            <span>Add a place to stay</span>
-          </label>
+        <div className="flex flex-wrap gap-4">
+          {/* <label className="flex items-center space-x-2">
+            <input 
+              type="checkbox" 
+              checked={addPlace} 
+              onChange={() => setAddPlace(!addPlace)}
+              className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+            />
+            <span className="text-sm text-gray-700">Add a place to stay</span>
+          </label> */}
 
           {tripType === 'roundtrip' && (
             <label className="flex items-center space-x-2">
-              <input type="checkbox" checked={addCar} onChange={() => setAddCar(!addCar)} />
-              <span>Add a car</span>
+              {/* <input 
+                type="checkbox" 
+                checked={addCar} 
+                onChange={() => setAddCar(!addCar)}
+                className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+              />
+              <span className="text-sm text-gray-700">Add a car</span> */}
             </label>
           )}
         </div>
 
         {/* Error Message */}
         {error && (
-          <div className="text-red-600 text-sm bg-red-50 p-3 rounded-md border border-red-200 mt-4">
+          <div className="text-red-600 text-sm bg-red-50 p-3 rounded-md border border-red-200">
             {error}
           </div>
         )}
 
         {/* Search Button */}
-        <div className="pt-4">
+        <div>
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-4 rounded-md text-base sm:text-lg font-medium disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
           >
             {loading ? 'Searching...' : 'Search Flights'}
           </button>
@@ -508,7 +512,7 @@ function SearchForm({ activeTab, onSearch, initialSearchParams }) {
           <div className="space-y-4">
             {flightOffers.map((offer, index) => (
               <div key={index} className="p-4 border rounded-lg bg-white shadow-sm">
-                <div className="flex justify-between items-start">
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                   <div>
                     <h3 className="font-medium">
                       {offer.itineraries[0].segments[0].departure.iataCode} →
@@ -528,26 +532,6 @@ function SearchForm({ activeTab, onSearch, initialSearchParams }) {
                     </p>
                     <p className="text-sm text-gray-600">{offer.travelerPricings.length} traveler(s)</p>
                   </div>
-                </div>
-
-                <div className="mt-4 border-t pt-4">
-                  <h4 className="font-medium mb-2">Flight Details:</h4>
-                  {offer.itineraries[0].segments.map((segment, segIndex) => (
-                    <div key={segIndex} className="mb-3">
-                      <div className="flex items-center">
-                        <span className="font-medium mr-2">
-                          {segment.departure.iataCode} → {segment.arrival.iataCode}
-                        </span>
-                        <span className="text-sm bg-blue-100 text-blue-800 px-2 py-1 rounded">
-                          {segment.carrierCode} {segment.number}
-                        </span>
-                      </div>
-                      <div className="text-sm text-gray-600">
-                        Depart: {new Date(segment.departure.at).toLocaleTimeString()} •
-                        Arrive: {new Date(segment.arrival.at).toLocaleTimeString()}
-                      </div>
-                    </div>
-                  ))}
                 </div>
               </div>
             ))}

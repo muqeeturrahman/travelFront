@@ -53,14 +53,14 @@ function Navbar() {
           {/* <button className="hidden sm:flex items-center bg-blue-500 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors hover:bg-blue-600">
             Become An Expert
           </button> */}
-          <button className="flex items-center text-sm hover:text-blue-400 transition-colors">
+          {/* <button className="flex items-center text-sm hover:text-blue-400 transition-colors">
             <Globe className="h-4 w-4 mr-1" />
             USD
-          </button>
-          <button className="flex items-center text-sm hover:text-blue-400 transition-colors">
+          </button> */}
+          {/* <button className="flex items-center text-sm hover:text-blue-400 transition-colors">
             <User className="h-4 w-4 mr-1" />
             Sign In
-          </button>
+          </button> */}
           <button className="md:hidden">
             <Search className="h-5 w-5" />
           </button>

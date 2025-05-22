@@ -8,7 +8,7 @@ import FilterSidebar from '../components/search/FilterSidebar';
 import FlightCard from '../components/flights/FlightCard';
 import Footer from '../components/home/Footer';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3008';
+const API_URL = import.meta.env.VITE_API_URL || 'https://travey-backend.vercel.app';
 
 function SearchPage() {
   const location = useLocation();

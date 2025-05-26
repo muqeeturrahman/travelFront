@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useMemo, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
-import { Search, MapPin, Calendar, UserPlus, DollarSign } from 'lucide-react';
+import { Search, MapPin, Calendar, UserPlus, DollarSign, Plane } from 'lucide-react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
@@ -493,6 +493,28 @@ function SearchForm({ activeTab, onSearch, initialSearchParams }) {
               />
             )}
           </div>
+
+          {/* Travel Class Dropdown */}
+          <div className="relative col-span-full sm:col-span-1 lg:col-span-1">
+            <div className="relative">
+              <Plane className="absolute left-3 top-3 h-5 w-5 text-gray-400 rotate-90" />
+              <select
+                name="travelClass"
+                value={flightData.travelClass}
+                onChange={handleInputChange}
+                className="pl-10 pr-4 py-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 appearance-none bg-white"
+              >
+                <option value="ECONOMY">Economy</option>
+                <option value="PREMIUM_ECONOMY">Premium Economy</option>
+                <option value="BUSINESS">Business</option>
+                <option value="FIRST">First</option>
+              </select>
+              <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+              </div>
+            </div>
+          </div>
+
         </div>
 
         {/* Additional Options */}

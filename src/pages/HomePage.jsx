@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar';
 import Hero from '../components/home/Hero';
 import PopularDestinations from '../components/home/PopularDestinations.jsx';
 import PromoSections from '../components/home/PromoSections.jsx';
-import RecommendedHotels from '../components/home/RecommendedHotels.jsx';
+import FeaturedPartners from '../components/home/FeaturedPartners.jsx';
 import Testimonials from '../components/home/Testimonials.jsx';
 import Footer from '../components/home/Footer.jsx';
 
@@ -14,7 +14,7 @@ function HomePage() {
       <Hero />
       <PopularDestinations />
       <PromoSections />
-      <RecommendedHotels />
+      <FeaturedPartners />
       <Testimonials />
       <Footer />
     </div>

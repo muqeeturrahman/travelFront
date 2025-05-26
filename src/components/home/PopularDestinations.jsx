@@ -41,12 +41,12 @@ function PopularDestinations() {
       <div className="container mx-auto">
         <div className="flex justify-between items-center mb-8">
           <h2 className="text-2xl font-bold text-gray-900">Popular Destinations</h2>
-          <a 
-            href="#" 
-            className="text-blue-600 hover:text-blue-800 transition-colors flex items-center text-sm font-medium"
-          >
-            View All Destinations <ChevronRight className="h-4 w-4 ml-1" />
-          </a>
+            {/* <a 
+              href="#" 
+              className="text-blue-600 hover:text-blue-800 transition-colors flex items-center text-sm font-medium"
+            >
+              View All Destinations <ChevronRight className="h-4 w-4 ml-1" />
+            </a> */}
         </div>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">

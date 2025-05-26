@@ -259,35 +259,35 @@ const FlightCard = ({ flightOffer, searchParams }) => {
     <>
       <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
         {/* Price Banner */}
-        <div className="bg-blue-600 text-white px-6 py-3 rounded-t-lg flex justify-between items-center">
+        <div className="bg-blue-600 text-white px-4 sm:px-6 py-3 rounded-t-lg flex flex-wrap justify-between items-center">
           <div className="flex items-center">
             <DollarSign className="h-5 w-5 mr-2" />
-            <span className="text-2xl font-bold">{parseFloat(flightOffer.price.total).toFixed(2)}</span>
+            <span className="text-xl sm:text-2xl font-bold">{parseFloat(flightOffer.price.total).toFixed(2)}</span>
             <span className="ml-2 text-sm opacity-75">per person</span>
           </div>
           <button
             onClick={() => setIsBookingModalOpen(true)}
             disabled={isLoading}
-            className="bg-white text-blue-600 px-6 py-2 rounded-full font-semibold hover:bg-blue-50 transition-colors disabled:bg-gray-200 disabled:text-blue-400"
+            className="bg-white text-blue-600 px-4 sm:px-6 py-2 rounded-full font-semibold hover:bg-blue-50 transition-colors disabled:bg-gray-200 disabled:text-blue-400 mt-2 sm:mt-0"
           >
             {isLoading ? 'Processing...' : 'Book Now'}
           </button>
         </div>
 
-        <div className="p-6">
+        <div className="p-4 sm:p-6">
           {/* Flight Route */}
-          <div className="flex items-center justify-between mb-6">
+          <div className="flex flex-col sm:flex-row items-center justify-between mb-6 space-y-4 sm:space-y-0">
             {/* Departure */}
-            <div className="text-center">
-              <p className="text-2xl font-bold text-gray-800">{departureDisplay.time}</p>
+            <div className="text-center w-full sm:w-auto">
+              <p className="text-xl sm:text-2xl font-bold text-gray-800">{departureDisplay.time}</p>
               <p className="text-sm text-gray-500">{firstSegment.departure.iataCode}</p>
               <p className="text-xs text-gray-400">{departureDisplay.date}</p>
             </div>
 
             {/* Flight Duration */}
-            <div className="flex-1 px-8">
+            <div className="flex-1 px-2 sm:px-8 w-full">
               <div className="flex flex-col items-center">
-                <p className="text-sm text-gray-500 mb-2">
+                <p className="text-sm text-gray-500 mb-2 whitespace-nowrap">
                   <Clock className="inline h-4 w-4 mr-1" />
                   {calculatedDuration}
                 </p>
@@ -299,15 +299,15 @@ const FlightCard = ({ flightOffer, searchParams }) => {
                 <p className="text-sm text-gray-500 mt-2">
                   {stops === 0 ? 'Direct' : `${stops} Stop${stops > 1 ? 's' : ''}`}
                 </p>
-                <p className="text-sm font-medium text-blue-600">
+                <p className="text-sm font-medium text-blue-600 truncate max-w-full">
                   {airlineDetails.name || flightOffer.itineraries[0].segments[0].carrierCode}
                 </p>
               </div>
             </div>
 
             {/* Arrival */}
-            <div className="text-center">
-              <p className="text-2xl font-bold text-gray-800">{arrivalDisplay.time}</p>
+            <div className="text-center w-full sm:w-auto">
+              <p className="text-xl sm:text-2xl font-bold text-gray-800">{arrivalDisplay.time}</p>
               <p className="text-sm text-gray-500">{lastSegment.arrival.iataCode}</p>
               <p className="text-xs text-gray-400">{arrivalDisplay.date}</p>
             </div>
@@ -315,7 +315,7 @@ const FlightCard = ({ flightOffer, searchParams }) => {
 
           {/* Flight Details */}
           <div className="border-t pt-4">
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {/* Airline */}
               <div className="flex items-center">
                 <div className="flex items-center space-x-2">
@@ -330,12 +330,9 @@ const FlightCard = ({ flightOffer, searchParams }) => {
                   />
                   <div>
                     <p className="text-sm font-medium text-gray-700">Airline</p>
-                    <p className="text-sm font-medium text-blue-600">
+                    <p className="text-sm font-medium text-blue-600 truncate max-w-[120px]">
                       {airlineDetails.name || flightOffer.itineraries[0].segments[0].carrierCode}
                     </p>
-                    {/* <p className="text-xs text-gray-500">
-                      Flight: {airlineDetails.name || flightOffer.itineraries[0].segments[0].carrierCode}
-                    </p> */}
                   </div>
                 </div>
               </div>
@@ -369,11 +366,8 @@ const FlightCard = ({ flightOffer, searchParams }) => {
                   const segmentCarrierCode = segment.carrierCode;
                   const currentSegmentAirline = segmentAirlineDetails[segmentCarrierCode] || { name: segmentCarrierCode, logo: '' };
 
-                  // Log the airline name being used for this segment
-                  console.log(`Segment ${index} (${segment.departure.iataCode}-${segment.arrival.iataCode}) Airline Name:`, currentSegmentAirline.name);
-
                   return (
-                    <div key={index} className="flex items-center text-sm text-sigma-secondary mb-2 text-sm text-gray-600">
+                    <div key={index} className="flex flex-wrap items-center text-sm text-gray-600 mb-2">
                       <img
                         src={currentSegmentAirline.logo}
                         alt={currentSegmentAirline.name}
@@ -383,16 +377,13 @@ const FlightCard = ({ flightOffer, searchParams }) => {
                           e.target.src = 'https://via.placeholder.com/100x30?text=Airline';
                         }}
                       />
-                      <span>{segment.departure.iataCode}</span>
-                      <ArrowRight className="h-4 w-4 mx-2" />
+                      <span className="mr-1">{segment.departure.iataCode}</span>
+                      <ArrowRight className="h-4 w-4 mx-1" />
                       <span>{segment.arrival.iataCode}</span>
-                      <span className="ml-2">({formatDateTimeInUserZone(segment.departure.at).time})</span>
-                      <span className="ml-2 font-medium text-blue-600">
+                      <span className="ml-2 whitespace-nowrap">({formatDateTimeInUserZone(segment.departure.at).time})</span>
+                      <span className="ml-2 font-medium text-blue-600 truncate max-w-[150px] block sm:inline-block w-full sm:w-auto mt-1 sm:mt-0">
                         {currentSegmentAirline.name}
                       </span>
-                      {/* <span className="ml-2 text-gray-500">
-                        Flight: {currentSegmentAirline.name || segment.carrierCode}
-                      </span> */}
                     </div>
                   );
                 })}
@@ -418,4 +409,4 @@ FlightCard.propTypes = {
   searchParams: PropTypes.object.isRequired
 };
 
-export default FlightCard; 
+export default FlightCard;

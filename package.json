@@ -10,8 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "airline-codes": "^1.0.3",
+    "airlines-iata-codes": "^1.0.1",
     "axios": "^1.6.7",
     "lucide-react": "^0.344.0",
+    "luxon": "^3.6.1",
     "prop-types": "^15.8.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

@@ -164,6 +164,18 @@ function SearchForm({ activeTab, onSearch, initialSearchParams }) {
 
   const handleInputChange = useCallback((e) => {
     const { name, value } = e.target;
+    
+    // Handle date inputs
+    if (name === 'departureDate' || name === 'returnDate') {
+      // Basic length check to prevent excessively long inputs
+      if (value.length > 10) {
+        return; // Stop updating state if input is too long for a date format like YYYY-MM-DD
+      }
+
+      // The type="date" input handles format validation (YYYY-MM-DD) natively
+      // No need for complex manual parsing and validation here for basic typing prevention
+    }
+
     setFlightData(prev => ({
       ...prev,
       [name]: value
@@ -413,6 +425,8 @@ function SearchForm({ activeTab, onSearch, initialSearchParams }) {
                 className="pl-10 pr-4 py-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 appearance-none"
                 required
                 min={new Date().toISOString().split('T')[0]}
+                pattern="\d{4}-\d{2}-\d{2}"
+                title="Please enter a valid date in YYYY-MM-DD format"
               />
             </div>
           ) : (
@@ -427,6 +441,8 @@ function SearchForm({ activeTab, onSearch, initialSearchParams }) {
                   className="pl-10 pr-4 py-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 appearance-none"
                   required
                   min={new Date().toISOString().split('T')[0]}
+                  pattern="\d{4}-\d{2}-\d{2}"
+                  title="Please enter a valid date in YYYY-MM-DD format"
                 />
               </div>
               <div className="relative">
@@ -439,6 +455,8 @@ function SearchForm({ activeTab, onSearch, initialSearchParams }) {
                   className="pl-10 pr-4 py-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 appearance-none"
                   required={tripType === 'roundtrip'}
                   min={flightData.departureDate || new Date().toISOString().split('T')[0]}
+                  pattern="\d{4}-\d{2}-\d{2}"
+                  title="Please enter a valid date in YYYY-MM-DD format"
                 />
               </div>
             </>

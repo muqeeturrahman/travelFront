@@ -359,36 +359,57 @@ const FlightCard = ({ flightOffer, searchParams }) => {
             </div>
 
             {/* Flight Segments */}
-            {stops > 0 && (
-              <div className="mt-4 pt-4 border-t">
-                <p className="text-sm font-medium text-gray-700 mb-2">Flight Segments:</p>
-                {flightOffer.itineraries[0].segments.map((segment, index) => {
-                  const segmentCarrierCode = segment.carrierCode;
-                  const currentSegmentAirline = segmentAirlineDetails[segmentCarrierCode] || { name: segmentCarrierCode, logo: '' };
-
-                  return (
-                    <div key={index} className="flex flex-wrap items-center text-sm text-gray-600 mb-2">
-                      <img
-                        src={currentSegmentAirline.logo}
-                        alt={currentSegmentAirline.name}
-                        className="h-4 w-auto object-contain mr-2"
-                        onError={(e) => {
-                          e.target.onerror = null;
-                          e.target.src = 'https://via.placeholder.com/100x30?text=Airline';
-                        }}
-                      />
-                      <span className="mr-1">{segment.departure.iataCode}</span>
-                      <ArrowRight className="h-4 w-4 mx-1" />
-                      <span>{segment.arrival.iataCode}</span>
-                      <span className="ml-2 whitespace-nowrap">({formatDateTimeInUserZone(segment.departure.at).time})</span>
-                      <span className="ml-2 font-medium text-blue-600 truncate max-w-[150px] block sm:inline-block w-full sm:w-auto mt-1 sm:mt-0">
-                        {currentSegmentAirline.name}
-                      </span>
+            <div className="mt-4 pt-4 border-t">
+              <p className="text-sm font-medium text-gray-700 mb-2">Flight Segments:</p>
+              {flightOffer.itineraries[0].segments.map((segment, index) => {
+                const segmentCarrierCode = segment.carrierCode;
+                const currentSegmentAirline = segmentAirlineDetails[segmentCarrierCode] || { name: segmentCarrierCode, logo: '' };
+                const flightNumber = `${segment.carrierCode}${segment.number}`;
+                const route = `${segment.departure.iataCode} ➝ ${segment.arrival.iataCode}`;
+                const dep = formatDateTimeInUserZone(segment.departure.at);
+                const arr = formatDateTimeInUserZone(segment.arrival.at);
+                // Duration: segment.duration is in ISO 8601 (e.g., PT5H30M)
+                let duration = 'N/A';
+                try {
+                  const dur = segment.duration.match(/PT(?:(\d+)H)?(?:(\d+)M)?/);
+                  if (dur) {
+                    const h = dur[1] ? `${dur[1]}h` : '';
+                    const m = dur[2] ? ` ${dur[2]}m` : '';
+                    duration = `${h}${m}`.trim();
+                  }
+                } catch {}
+                return (
+                  <div key={index} className="mb-4 p-3 rounded bg-gray-50 border flex flex-col sm:flex-row sm:items-center">
+                    <div className="flex-1">
+                      <div className="flex items-center mb-1">
+                        <img
+                          src={currentSegmentAirline.logo}
+                          alt={currentSegmentAirline.name}
+                          className="h-5 w-auto object-contain mr-2"
+                          onError={e => { e.target.onerror = null; e.target.src = 'https://via.placeholder.com/100x30?text=Airline'; }}
+                        />
+                        <span className="font-semibold text-blue-700 text-base mr-2">{route}</span>
+                        <span className="ml-2 text-xs text-gray-500">Flight: <span className="font-bold text-gray-800">{flightNumber}</span></span>
+                      </div>
+                      <div className="flex flex-wrap gap-x-6 gap-y-1 text-sm mt-1">
+                        <div>
+                          <span className="font-medium text-gray-700">Departure:</span> {dep.date}, {dep.time}
+                          {segment.departure.terminal && (
+                            <span className="ml-1 text-xs text-gray-500">(Terminal {segment.departure.terminal})</span>
+                          )}
+                        </div>
+                        <div>
+                          <span className="font-medium text-gray-700">Arrival:</span> {arr.date}, {arr.time}
+                        </div>
+                        <div>
+                          <span className="font-medium text-gray-700">Duration:</span> {duration}
+                        </div>
+                      </div>
                     </div>
-                  );
-                })}
-              </div>
-            )}
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>

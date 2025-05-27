@@ -86,18 +86,23 @@ const getAirlineDetails = async (carrierCode) => {
   const airlineData = await fetchAirlineDetails(carrierCode);
 
   // Use carrierCode if airlineData is null or if the business name is 'AMADEUS SIX'
-  const resolvedName = (airlineData?.businessName && airlineData.businessName !== 'AMADEUS SIX')
-    ? airlineData.businessName
-    : carrierCode;
+  let resolvedName = carrierCode;
+  if (airlineData?.businessName && airlineData.businessName !== 'AMADEUS SIX') {
+    resolvedName = airlineData.businessName;
+    // Only cache if we have a real business name
+    const details = {
+      name: resolvedName,
+      logo: `https://content.airhex.com/content/logos/airlines_${carrierCode}_350_100_r.png?proportions=keep`
+    };
+    airlineCache.set(carrierCode, details);
+    return details;
+  }
 
-  const details = {
-    name: resolvedName,
+  // If we don't have a real business name, do not cache, just return fallback
+  return {
+    name: carrierCode,
     logo: `https://content.airhex.com/content/logos/airlines_${carrierCode}_350_100_r.png?proportions=keep`
   };
-
-  // Cache the result
-  airlineCache.set(carrierCode, details);
-  return details;
 };
 
 // Utility function to format date and time in user's local timezone
@@ -303,7 +308,7 @@ const FlightCard = ({ flightOffer, searchParams }) => {
                   {airlineDetails.name || flightOffer.itineraries[0].segments[0].carrierCode}
                 </p>
               </div>
-            </div>
+            </div>  
 
             {/* Arrival */}
             <div className="text-center w-full sm:w-auto">

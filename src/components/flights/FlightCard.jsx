@@ -43,7 +43,7 @@ const getAmadeusToken = async () => {
     // Cache the token
     tokenCache.token = response.data.access_token;
     tokenCache.expiresAt = Date.now() + (response.data.expires_in * 1000);
-    
+
     return tokenCache.token;
   } catch (error) {
     console.error('Error fetching Amadeus token:', error);
@@ -87,8 +87,8 @@ const getAirlineDetails = async (carrierCode) => {
 
   // Use carrierCode if airlineData is null or if the business name is 'AMADEUS SIX'
   const resolvedName = (airlineData?.businessName && airlineData.businessName !== 'AMADEUS SIX')
-                         ? airlineData.businessName
-                         : carrierCode;
+    ? airlineData.businessName
+    : carrierCode;
 
   const details = {
     name: resolvedName,
@@ -195,25 +195,25 @@ const FlightCard = ({ flightOffer, searchParams }) => {
         time: firstSegment.departure.at,
         duration: flightOffer.itineraries[0].duration,
         stops: flightOffer.itineraries[0].segments.length - 1,
-        
+
         // Travel class and baggage
         travelClass: searchParams.travelClass || 'ECONOMY',
         checkedBags: 2,
         cabinBags: 1,
-        
+
         // Passenger details
         adults: searchParams.adults || 1,
         children: searchParams.children || 0,
         infants: searchParams.infants || 0,
-        
+
         // Trip dates
         departureDate: firstSegment.departure.at,
         returnDate: searchParams.tripType === 'roundtrip' ? flightOffer.itineraries[1]?.segments[0].departure.at : null,
-        
+
         // Airlines
         departureAirline: firstSegment.carrierCode,
         returnAirline: searchParams.tripType === 'roundtrip' ? flightOffer.itineraries[1]?.segments[0].carrierCode : null,
-        
+
         // User details
         ...userDetails
       };
@@ -319,7 +319,7 @@ const FlightCard = ({ flightOffer, searchParams }) => {
               {/* Airline */}
               <div className="flex items-center">
                 <div className="flex items-center space-x-2">
-                  <img 
+                  <img
                     src={airlineDetails.logo}
                     alt={airlineDetails.name}
                     className="h-6 w-auto object-contain"
@@ -377,7 +377,7 @@ const FlightCard = ({ flightOffer, searchParams }) => {
                     const m = dur[2] ? ` ${dur[2]}m` : '';
                     duration = `${h}${m}`.trim();
                   }
-                } catch {}
+                } catch { }
                 return (
                   <div key={index} className="mb-4 p-3 rounded bg-gray-50 border flex flex-col sm:flex-row sm:items-center">
                     <div className="flex-1">
@@ -388,6 +388,7 @@ const FlightCard = ({ flightOffer, searchParams }) => {
                           className="h-5 w-auto object-contain mr-2"
                           onError={e => { e.target.onerror = null; e.target.src = 'https://via.placeholder.com/100x30?text=Airline'; }}
                         />
+                        <span className="font-medium text-gray-700 mr-2">{currentSegmentAirline.name}</span>
                         <span className="font-semibold text-blue-700 text-base mr-2">{route}</span>
                         <span className="ml-2 text-xs text-gray-500">Flight: <span className="font-bold text-gray-800">{flightNumber}</span></span>
                       </div>

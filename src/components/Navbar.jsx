@@ -1,71 +1,63 @@
-import React from 'react';
-import { Globe, User, ChevronDown, Search } from 'lucide-react';
+import React, { useState } from 'react';
+import { Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Logo from './Logo';
 
 function Navbar() {
+  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const navLinks = [
+    { to: '/', text: 'Home' },
+    { to: '/deals', text: 'Destinations' },
+    { to: '/contact', text: 'Contact' },
+  ];
+
+  const renderNavLinks = (isMobile = false) =>
+    navLinks.map((link) => (
+      <li key={link.to} className={isMobile ? '' : 'text-sm font-medium'}>
+        <Link
+          to={link.to}
+          className="hover:text-blue-400 transition-colors"
+          onClick={() => {
+            if (isMobile) {
+              setMobileMenuOpen(false);
+            }
+          }}
+        >
+          {link.text}
+        </Link>
+      </li>
+    ));
+
   return (
-    <header className="bg-[#0F172A] text-white py-4">
+    <header className="bg-[#0F172A] text-white py-4 relative z-20">
       <div className="container mx-auto px-4 flex items-center justify-between">
+        {/* Left side: Logo and Desktop Nav */}
         <div className="flex items-center space-x-8">
           <Logo />
           <nav className="hidden md:flex">
-            <ul className="flex space-x-6">
-              <li className="text-sm font-medium">
-                <Link to="/" className="hover:text-blue-400 transition-colors">Home</Link>
-              </li>
-              {/* <li className="text-sm font-medium">
-                <a href="#" className="flex items-center hover:text-blue-400 transition-colors">
-                  Categories <ChevronDown className="ml-1 h-4 w-4" />
-                </a>
-              </li> */}
-              <li className="text-sm font-medium">
-                <Link to="/deals" className="flex items-center hover:text-blue-400 transition-colors">
-                  Destinations
-                </Link>
-              </li>
-              {/* <li className="text-sm font-medium"><a href="#" className="hover:text-blue-400 transition-colors">Blog</a></li> */}
-              {/* <li className="text-sm font-medium">
-                <a href="#" className="flex items-center hover:text-blue-400 transition-colors">
-                  Pages <ChevronDown className="ml-1 h-4 w-4" />
-                </a>
-              </li> */}
-              <li className="text-sm font-medium">
-                <Link to="/contact" className="hover:text-blue-400 transition-colors">Contact</Link>
-              </li>
-            </ul>
+            <ul className="flex space-x-6">{renderNavLinks()}</ul>
           </nav>
         </div>
-        
-        <div className="flex items-center space-x-4">
-          <div className="hidden md:flex items-center mr-4">
-            {/* <div className="flex items-center mr-6">
-              <Globe className="h-4 w-4 mr-1" />
-              <span className="text-sm">AUD</span>
-              <ChevronDown className="ml-1 h-4 w-4" />
-            </div> */}
-            {/* <div className="flex items-center mr-6">
-              <Globe className="h-4 w-4 mr-1" />
-              <span className="text-sm">English</span>
-              <ChevronDown className="ml-1 h-4 w-4" />
-            </div> */}
-          </div>
-          {/* <button className="hidden sm:flex items-center bg-blue-500 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors hover:bg-blue-600">
-            Become An Expert
-          </button> */}
-          {/* <button className="flex items-center text-sm hover:text-blue-400 transition-colors">
-            <Globe className="h-4 w-4 mr-1" />
-            USD
-          </button> */}
-          {/* <button className="flex items-center text-sm hover:text-blue-400 transition-colors">
-            <User className="h-4 w-4 mr-1" />
-            Sign In
-          </button> */}
-          <button className="md:hidden">
-            <Search className="h-5 w-5" />
+
+        {/* Right side: Mobile Menu Button */}
+        <div className="md:hidden">
+          <button onClick={() => setMobileMenuOpen(!isMobileMenuOpen)} aria-label="Toggle mobile menu">
+            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
       </div>
+
+      {/* Mobile Menu Dropdown */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden bg-[#0F172A] absolute top-full left-0 w-full shadow-lg">
+          <nav>
+            <ul className="flex flex-col items-center space-y-4 py-4">
+              {renderNavLinks(true)}
+            </ul>
+          </nav>
+        </div>
+      )}
     </header>
   );
 }

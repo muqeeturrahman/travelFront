@@ -20,9 +20,9 @@ function Navbar() {
                 </a>
               </li> */}
               <li className="text-sm font-medium">
-                <a href="#" className="flex items-center hover:text-blue-400 transition-colors">
-                  Destinations <ChevronDown className="ml-1 h-4 w-4" />
-                </a>
+                <Link to="/deals" className="flex items-center hover:text-blue-400 transition-colors">
+                  Destinations
+                </Link>
               </li>
               {/* <li className="text-sm font-medium"><a href="#" className="hover:text-blue-400 transition-colors">Blog</a></li> */}
               {/* <li className="text-sm font-medium">

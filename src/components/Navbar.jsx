@@ -10,7 +10,7 @@ function Navbar() {
   ];
 
   return (
-    <header className="bg-[#0F172A] text-white py-4">
+    <header className="bg-[#0F172A] text-white py-2 shadow-md">
       <div className="container mx-auto px-4">
         <div className="flex items-center space-x-4 sm:space-x-8">
           <Logo />

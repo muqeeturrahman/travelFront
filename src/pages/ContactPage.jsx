@@ -22,9 +22,9 @@ function ContactPage() {
           {/* Company Information */}
           <div className="space-y-8">
             <div>
-              <h2 className="text-2xl font-bold mb-6">About GoTrip</h2>
+              <h2 className="text-2xl font-bold mb-6">About </h2>
               <p className="text-gray-600 mb-4">
-                GoTrip is your premier travel partner, offering comprehensive travel solutions 
+                Flight On Budget is your premier travel partner, offering comprehensive travel solutions 
                 for both leisure and business travelers. With years of experience in the industry, 
                 we pride ourselves on delivering exceptional service and unforgettable travel experiences.
               </p>
@@ -87,8 +87,8 @@ function ContactPage() {
                 <div>
                   <h4 className="font-semibold mb-1">Phone</h4>
                   <p className="text-gray-600">
-                    Main: +1 (555) 123-4567<br />
-                    Toll Free: 1-800-GOTRIP
+                    Main: +61480810519<br />
+                    Toll Free: 1-800-Flight On Budget
                   </p>
                 </div>
               </div>
@@ -98,9 +98,9 @@ function ContactPage() {
                 <div>
                   <h4 className="font-semibold mb-1">Email</h4>
                   <p className="text-gray-600">
-                    General: info@gotrip.com<br />
-                    Support: support@gotrip.com<br />
-                    Business: business@gotrip.com
+                    Email: Info@flightonbudget.com<br />
+                    Phone: +61480810519<br />
+                    Whatsapp: +61480810519
                   </p>
                 </div>
               </div>

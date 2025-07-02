@@ -74,8 +74,22 @@ const DealDetailModal = ({ dealId, onClose }) => {
             </div>
           )}
         </div>
-        <div className="p-4 border-t flex justify-end">
-           <button 
+        <div className="p-4 border-t flex justify-end gap-2">
+          <a
+            href={`https://wa.me/61480810519`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-green-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-green-600 transition-colors duration-300"
+          >
+            Book on WhatsApp
+          </a>
+          <a
+            href={`tel:+61480810519`}
+            className="bg-blue-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-300"
+          >
+            Call to Book
+          </a>
+          <button 
             onClick={onClose}
             className="bg-blue-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-blue-700 transition-colors duration-300"
           >

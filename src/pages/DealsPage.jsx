@@ -65,12 +65,23 @@ const DealsPage = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {deals.map((deal) => (
-              <div key={deal._id} className="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 ease-in-out group">
-                <div className="relative">
-                  <img src={deal.picture} alt={deal.title} className="w-full h-56 object-cover" />
-                  <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-30 transition-all duration-300"></div>
+              <div
+                key={deal._id}
+                className="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 ease-in-out group flex flex-col"
+                style={{ minHeight: '600px', height: '700px' }} // Make card tall
+              >
+                <div className="relative flex-1 flex items-center justify-center bg-white" style={{ minHeight: '400px', height: '420px' }}>
+                  <div className="w-full h-full flex items-center justify-center bg-white">
+                    <img
+                      src={deal.picture}
+                      alt={deal.title}
+                      className="object-contain w-full h-full"
+                      style={{ background: 'white' }}
+                    />
+                  </div>
+                  <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-30 transition-all duration-300 pointer-events-none"></div>
                 </div>
-                <div className="p-6 flex flex-col">
+                <div className="p-6 flex flex-col flex-shrink-0">
                   <h2 className="text-2xl font-bold text-gray-800 mb-3 flex-grow">{deal.title}</h2>
                   <p className="text-gray-600 text-sm mb-4 line-clamp-3">{deal.aboutThisTour}</p>
                   <button

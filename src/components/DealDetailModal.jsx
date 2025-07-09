@@ -46,7 +46,14 @@ const DealDetailModal = ({ dealId, onClose }) => {
           {error && <p className="text-red-500">Error: {error}</p>}
           {deal && (
             <div>
-              <img src={deal.picture} alt={deal.title} className="w-full h-80 object-cover rounded-lg mb-6" />
+              <div className="w-full flex justify-center items-center bg-white mb-6" style={{ height: '420px', minHeight: '400px' }}>
+                <img
+                  src={deal.picture}
+                  alt={deal.title}
+                  className="object-contain w-full h-full rounded-lg"
+                  style={{ background: 'white' }}
+                />
+              </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <h3 className="text-xl font-semibold mb-3">About this tour</h3>
@@ -64,12 +71,12 @@ const DealDetailModal = ({ dealId, onClose }) => {
                     {deal.included.map((item, index) => <li key={index}>{item}</li>)}
                   </ul>
                 </div>
-                <div>
+                {/* <div>
                   <h3 className="text-xl font-semibold mb-3">Excluded</h3>
                   <ul className="list-disc list-inside text-gray-700 space-y-1">
                     {deal.excluded.map((item, index) => <li key={index}>{item}</li>)}
                   </ul>
-                </div>
+                </div> */}
               </div>
             </div>
           )}

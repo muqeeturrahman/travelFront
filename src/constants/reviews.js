@@ -1,93 +1,93 @@
 export const reviews = [
   {
     id: 1,
-    name: "Sarah Thompson",
-    location: "Dubai, UAE",
+    name: 'Sophie Tremblay',
+    location: "Canada",
     rating: 5,
-    date: "2024-03-15",
-    comment: "Exceptional service! Found the best flight deals to Europe. The booking process was seamless and the customer support was outstanding.",
-    image: "https://randomuser.me/api/portraits/women/1.jpg"
+    date: "2025-03-15",
+    comment: "Absolutely loved my trip! The booking process was seamless and the support team was always available. Will book again!",
+    image: "https://randomuser.me/api/portraits/women/31.jpg"
   },
   {
     id: 2,
-    name: "Michael Chen",
-    location: "Sydney, Australia",
+    name: "Liam Chen",
+    location: "Canada",
     rating: 5,
-    date: "2024-03-14",
-    comment: "Used Flight On Budget for our family vacation to Bali. Great prices and excellent flight options. Will definitely use again!",
-    image: "https://randomuser.me/api/portraits/men/2.jpg"
+    date: "2025-03-14",
+    comment: "Great deals and excellent service. The Canada to Europe flight was smooth and affordable.",
+    image: "https://randomuser.me/api/portraits/men/32.jpg"
   },
   {
     id: 3,
-    name: "Ahmed Al-Rashid",
-    location: "Abu Dhabi, UAE",
+    name: "Olivia Martin",
+    location: "Canada",
     rating: 5,
-    date: "2024-03-13",
-    comment: "Best travel platform I've used. The interface is user-friendly and the prices are very competitive.",
-    image: "https://randomuser.me/api/portraits/men/3.jpg"
+    date: "2025-03-13",
+    comment: "I was impressed by the quick response from customer support. My family had a wonderful vacation!",
+    image: "https://randomuser.me/api/portraits/women/33.jpg"
   },
   {
     id: 4,
-    name: "Emma Wilson",
-    location: "Melbourne, Australia",
-    rating: 4,
-    date: "2024-03-12",
-    comment: "Great experience booking our flights to Asia. The price comparison feature saved us a lot of money.",
-    image: "https://randomuser.me/api/portraits/women/4.jpg"
+    name: "Noah Singh",
+    location: "Canada",
+    rating: 5,
+    date: "2025-03-12",
+    comment: "The best travel experience I have had in years. Highly recommend for Canadian travelers.",
+    image: "https://randomuser.me/api/portraits/men/34.jpg"
   },
   {
     id: 5,
-    name: "Fatima Al-Sayed",
-    location: "Sharjah, UAE",
+    name: "Emma Roy",
+    location: "Canada",
     rating: 5,
-    date: "2024-03-11",
-    comment: "Fantastic service! Found amazing deals for our family trip to Europe. The customer support team was very helpful.",
-    image: "https://randomuser.me/api/portraits/women/5.jpg"
+    date: "2025-03-11",
+    comment: "Easy to use website and great prices. The support team helped me with all my questions.",
+    image: "https://randomuser.me/api/portraits/women/35.jpg"
   },
   {
     id: 6,
-    name: "James Cooper",
-    location: "Brisbane, Australia",
+    name: "Benjamin Wilson",
+    location: "Canada",
     rating: 5,
-    date: "2024-03-10",
-    comment: "Booked multiple flights through Flight On Budget. Always reliable and best prices in the market.",
-    image: "https://randomuser.me/api/portraits/men/6.jpg"
+    date: "2025-03-10",
+    comment: "Booked a last-minute trip to Vancouver and everything went perfectly. Thank you!",
+    image: "https://randomuser.me/api/portraits/men/36.jpg"
   },
   {
     id: 7,
-    name: "Mohammed Al-Hashimi",
-    location: "Dubai, UAE",
+    name: "Charlotte Dubois",
+    location: "Canada",
     rating: 5,
-    date: "2024-03-09",
-    comment: "Excellent platform for booking flights. The search options are comprehensive and user-friendly.",
-    image: "https://randomuser.me/api/portraits/men/7.jpg"
+    date: "2025-03-09",
+    comment: "Fantastic service and unbeatable deals. Will recommend to my friends in Toronto.",
+    image: "https://randomuser.me/api/portraits/women/37.jpg"
   },
   {
     id: 8,
-    name: "Sophie Taylor",
-    location: "Perth, Australia",
-    rating: 4,
-    date: "2024-03-08",
-    comment: "Very satisfied with the service. Found great deals for our honeymoon trip.",
-    image: "https://randomuser.me/api/portraits/women/8.jpg"
+    name: "Jack Thompson",
+    location: "Canada",
+    rating: 5,
+    date: "2025-03-08",
+    comment: "The 24/7 support was a lifesaver when I needed to change my booking. Very satisfied.",
+    image: "https://randomuser.me/api/portraits/men/38.jpg"
   },
   {
     id: 9,
-    name: "Hassan Al-Mansoori",
-    location: "Ajman, UAE",
+    name: "Amelia Patel",
+    location: "Canada",
     rating: 5,
-    date: "2024-03-07",
-    comment: "The best travel booking experience. Very transparent pricing and excellent customer service.",
-    image: "https://randomuser.me/api/portraits/men/9.jpg"
+    date: "2025-03-07",
+    comment: "Loved the personalized recommendations. Made my trip planning so much easier!",
+    image: "https://randomuser.me/api/portraits/women/39.jpg"
   },
   {
     id: 10,
-    name: "Oliver Brown",
-    location: "Adelaide, Australia",
+    name: "Lucas Brown",
+    location: "Canada",
     rating: 5,
-    date: "2024-03-06",
-    comment: "Fantastic platform! Saved a lot on our family vacation flights. Highly recommended!",
-    image: "https://randomuser.me/api/portraits/men/10.jpg"
+    date: "2025-03-06",
+    comment: "Great experience from start to finish. Will definitely use this service again for my next trip.",
+    image: "https://randomuser.me/api/portraits/men/40.jpg"
   },
   {
     id: 11,
@@ -268,5 +268,96 @@ export const reviews = [
     date: "2024-02-15",
     comment: "Perfect platform for booking flights. Very reliable and trustworthy.",
     image: "https://randomuser.me/api/portraits/women/30.jpg"
-  }
+  },
+  {
+    id: 31,
+    name: "Sarah Thompson",
+    location: "Dubai, UAE",
+    rating: 5,
+    date: "2024-03-15",
+    comment: "Exceptional service! Found the best flight deals to Europe. The booking process was seamless and the customer support was outstanding.",
+    image: "https://randomuser.me/api/portraits/women/1.jpg"
+  },
+  {
+    id: 32,
+    name: "Michael Chen",
+    location: "Sydney, Australia",
+    rating: 5,
+    date: "2024-03-14",
+    comment: "Used Flight On Budget for our family vacation to Bali. Great prices and excellent flight options. Will definitely use again!",
+    image: "https://randomuser.me/api/portraits/men/2.jpg"
+  },
+  {
+    id: 33,
+    name: "Ahmed Al-Rashid",
+    location: "Abu Dhabi, UAE",
+    rating: 5,
+    date: "2024-03-13",
+    comment: "Best travel platform I've used. The interface is user-friendly and the prices are very competitive.",
+    image: "https://randomuser.me/api/portraits/men/3.jpg"
+  },
+  {
+    id: 34,
+    name: "Emma Wilson",
+    location: "Melbourne, Australia",
+    rating: 4,
+    date: "2024-03-12",
+    comment: "Great experience booking our flights to Asia. The price comparison feature saved us a lot of money.",
+    image: "https://randomuser.me/api/portraits/women/4.jpg"
+  },
+  {
+    id: 35,
+    name: "Fatima Al-Sayed",
+    location: "Sharjah, UAE",
+    rating: 5,
+    date: "2024-03-11",
+    comment: "Fantastic service! Found amazing deals for our family trip to Europe. The customer support team was very helpful.",
+    image: "https://randomuser.me/api/portraits/women/5.jpg"
+  },
+  {
+    id: 36,
+    name: "James Cooper",
+    location: "Brisbane, Australia",
+    rating: 5,
+    date: "2024-03-10",
+    comment: "Booked multiple flights through Flight On Budget. Always reliable and best prices in the market.",
+    image: "https://randomuser.me/api/portraits/men/6.jpg"
+  },
+  {
+    id: 37,
+    name: "Mohammed Al-Hashimi",
+    location: "Dubai, UAE",
+    rating: 5,
+    date: "2024-03-09",
+    comment: "Excellent platform for booking flights. The search options are comprehensive and user-friendly.",
+    image: "https://randomuser.me/api/portraits/men/7.jpg"
+  },
+  {
+    id: 38,
+    name: "Sophie Taylor",
+    location: "Perth, Australia",
+    rating: 4,
+    date: "2024-03-08",
+    comment: "Very satisfied with the service. Found great deals for our honeymoon trip.",
+    image: "https://randomuser.me/api/portraits/women/8.jpg"
+  },
+  {
+    id: 39,
+    name: "Hassan Al-Mansoori",
+    location: "Ajman, UAE",
+    rating: 5,
+    date: "2024-03-07",
+    comment: "The best travel booking experience. Very transparent pricing and excellent customer service.",
+    image: "https://randomuser.me/api/portraits/men/9.jpg"
+  },
+  {
+    id: 40,
+    name: "Oliver Brown",
+    location: "Adelaide, Australia",
+    rating: 5,
+    date: "2024-03-06",
+    comment: "Fantastic platform! Saved a lot on our family vacation flights. Highly recommended!",
+    image: "https://randomuser.me/api/portraits/men/10.jpg"
+  },
+ 
 ]; 

@@ -219,8 +219,17 @@ const FlightCard = ({ flightOffer, searchParams }) => {
         departureAirline: firstSegment.carrierCode,
         returnAirline: searchParams.tripType === 'roundtrip' ? flightOffer.itineraries[1]?.segments[0].carrierCode : null,
 
-        // User details
-        ...userDetails
+        // User details (from modal)
+        fullName: userDetails.fullName,
+        email: userDetails.email,
+        phoneNumber: userDetails.phoneNumber,
+        dateOfBirth: userDetails.dateOfBirth,
+        gender: userDetails.gender,
+        nationality: userDetails.nationality,
+        passportNumber: userDetails.passportNumber,
+        seatPreference: userDetails.seatPreference,
+        mealPreference: userDetails.mealPreference,
+        extraBaggageAddOns: userDetails.extraBaggageAddOns
       };
 
       const response = await axios.post(`${API_URL}/api/user/bookFlight`, bookingData, {

@@ -20,11 +20,12 @@ function HomePage() {
   return (
     <Layout>
       <Hero />
+      <SupportBanner />
+      <div className="mb-8" />
       <HomeDeals />
       <FlightPromos />
       <FeaturedPartners />
       <Testimonials />
-      <SupportBanner />
     </Layout>
   );
 }

@@ -74,9 +74,7 @@ const BookingModal = ({ isOpen, onClose, onSubmit, flightData }) => {
     if (!bookingDetails.nationality.trim()) {
       newErrors.nationality = 'Nationality is required';
     }
-    if (!bookingDetails.passportNumber.trim()) {
-      newErrors.passportNumber = 'Passport number is required';
-    }
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };

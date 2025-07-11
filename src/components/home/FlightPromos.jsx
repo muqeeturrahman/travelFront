@@ -216,18 +216,36 @@ function FlightPromos() {
         Explore Our Flight Deals By Searching Flights
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {flightDeals.map((deal, idx) => (
-          <div
-            key={idx}
-            className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col"
-          >
+        {flightDeals.map((deal, idx) => {
+          // Calculate original price (20% higher)
+          let discountedPrice = deal.price;
+          let originalPrice = null;
+          // Try to extract numeric value from price string
+          const priceMatch = String(deal.price).match(/([A-Z$]+)\s?(\d+(?:\.\d+)?)/i);
+          if (priceMatch) {
+            const currency = priceMatch[1];
+            const priceNum = parseFloat(priceMatch[2]);
+            const origNum = Math.round(priceNum * 1.2);
+            originalPrice = `${currency} ${origNum} Return`;
+          }
+          return (
             <div
-              className="h-48 bg-cover bg-center"
-              style={{ backgroundImage: `url('${deal.imageUrl}')` }}
-            />
-            <div className="p-6 flex flex-col flex-1">
-              <h3 className="text-xl font-bold mb-1 text-blue-800">{deal.route}</h3>
-              <span className="text-lg font-semibold text-blue-600 mb-3">{deal.price}</span>
+              key={idx}
+              className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col"
+            >
+              <div
+                className="h-48 bg-cover bg-center"
+                style={{ backgroundImage: `url('${deal.imageUrl}')` }}
+              />
+              <div className="p-6 flex flex-col flex-1">
+                {/* Price Display */}
+                <div className="mb-2 flex items-baseline gap-2">
+                  {originalPrice && (
+                    <span className="text-gray-400 line-through text-lg font-semibold">{originalPrice}</span>
+                  )}
+                  <span className="text-2xl font-bold text-blue-600">{discountedPrice}</span>
+                </div>
+                <h3 className="text-xl font-bold mb-1 text-blue-800">{deal.route}</h3>
 
               {/* Airlines */}
               {deal.airlines && (
@@ -283,7 +301,8 @@ function FlightPromos() {
               </div>
             </div>
           </div>
-        ))}
+        );
+      })}
       </div>
     </div>
   </section>

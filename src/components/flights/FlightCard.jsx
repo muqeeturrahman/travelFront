@@ -229,7 +229,8 @@ const FlightCard = ({ flightOffer, searchParams }) => {
         passportNumber: userDetails.passportNumber,
         seatPreference: userDetails.seatPreference,
         mealPreference: userDetails.mealPreference,
-        extraBaggageAddOns: userDetails.extraBaggageAddOns
+        extraBaggageAddOns: userDetails.extraBaggageAddOns,
+        currencyCode: searchParams.currencyCode || 'USD'
       };
 
       const response = await axios.post(`${API_URL}/api/user/bookFlight`, bookingData, {

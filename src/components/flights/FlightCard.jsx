@@ -155,7 +155,7 @@ const calculateDuration = (departureTimeUTC, arrivalTimeUTC) => {
   }
 };
 
-const FlightCard = ({ flightOffer, searchParams }) => {
+const FlightCard = ({ flightOffer, searchParams, discount = 0 }) => {
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [airlineDetails, setAirlineDetails] = useState({});
@@ -190,12 +190,15 @@ const FlightCard = ({ flightOffer, searchParams }) => {
       const firstSegment = flightOffer.itineraries[0].segments[0];
       const lastSegment = flightOffer.itineraries[0].segments[flightOffer.itineraries[0].segments.length - 1];
 
+      // Use discounted price if available, otherwise original
+      const priceToBook = hasDiscount ? parseFloat(discountedPrice) : originalPrice;
+
       // Prepare booking data
       const bookingData = {
         // Flight route details
         from: firstSegment.departure.iataCode,
         to: lastSegment.arrival.iataCode,
-        price: parseFloat(flightOffer.price.total),
+        price: priceToBook,
         date: firstSegment.departure.at,
         time: firstSegment.departure.at,
         duration: flightOffer.itineraries[0].duration,
@@ -270,6 +273,11 @@ const FlightCard = ({ flightOffer, searchParams }) => {
 
   const stops = flightOffer.itineraries[0].segments.length - 1;
 
+  // Calculate discounted price if discount is available
+  const originalPrice = parseFloat(flightOffer.price.total);
+  const hasDiscount = discount > 0;
+  const discountedPrice = hasDiscount ? (originalPrice * (1 - discount / 100)).toFixed(2) : originalPrice.toFixed(2);
+
   return (
     <>
       <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
@@ -277,7 +285,15 @@ const FlightCard = ({ flightOffer, searchParams }) => {
         <div className="bg-blue-600 text-white px-4 sm:px-6 py-3 rounded-t-lg flex flex-wrap justify-between items-center">
           <div className="flex items-center">
             <DollarSign className="h-5 w-5 mr-2" />
-            <span className="text-xl sm:text-2xl font-bold">{parseFloat(flightOffer.price.total).toFixed(2)}</span>
+            {hasDiscount ? (
+              <>
+                <span className="text-lg sm:text-xl font-semibold line-through opacity-70 mr-2">{originalPrice.toFixed(2)}</span>
+                <span className="text-xl sm:text-2xl font-bold">{discountedPrice}</span>
+                <span className="ml-2 text-sm bg-green-100 text-green-700 px-2 py-0.5 rounded font-semibold">-{discount}%</span>
+              </>
+            ) : (
+              <span className="text-xl sm:text-2xl font-bold">{originalPrice.toFixed(2)}</span>
+            )}
             <span className="ml-2 text-sm opacity-75">per person</span>
           </div>
           <button
@@ -443,7 +459,8 @@ const FlightCard = ({ flightOffer, searchParams }) => {
 
 FlightCard.propTypes = {
   flightOffer: PropTypes.object.isRequired,
-  searchParams: PropTypes.object.isRequired
+  searchParams: PropTypes.object.isRequired,
+  discount: PropTypes.number
 };
 
 export default FlightCard;

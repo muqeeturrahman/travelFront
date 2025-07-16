@@ -163,22 +163,13 @@ function SearchForm({ activeTab, onSearch, initialSearchParams }) {
   }, []);
 
   const handleInputChange = useCallback((e) => {
-    const { name, value } = e.target;
+    const { name, value, type } = e.target;
     
-    // Handle date inputs
-    if (name === 'departureDate' || name === 'returnDate') {
-      // Basic length check to prevent excessively long inputs
-      if (value.length > 10) {
-        return; // Stop updating state if input is too long for a date format like YYYY-MM-DD
-      }
-
-      // The type="date" input handles format validation (YYYY-MM-DD) natively
-      // No need for complex manual parsing and validation here for basic typing prevention
-    }
-
+    // Convert number fields to numbers
+    const numberFields = ['adults', 'children', 'infants', 'max', 'page', 'limit'];
     setFlightData(prev => ({
       ...prev,
-      [name]: value
+      [name]: numberFields.includes(name) ? Number(value) : value
     }));
   }, []);
 
@@ -194,9 +185,13 @@ function SearchForm({ activeTab, onSearch, initialSearchParams }) {
     setLoading(true);
     setError(null);
 
+    // Log the raw form data
+    console.log('[Flight Search] Raw flightData:', flightData);
+
     try {
       // Validate the form data using Zod
       const validatedData = flightSearchSchema.parse(flightData);
+      console.log('[Flight Search] Validated data:', validatedData);
 
       const {
         originLocationCode,
@@ -216,16 +211,37 @@ function SearchForm({ activeTab, onSearch, initialSearchParams }) {
 
       if (!originCode || !destinationCode || !departureDate || !adults) {
         toast.error("Please fill all required fields.");
-        return setLoading(false);
+        setLoading(false);
+        console.warn('[Flight Search] Missing required fields:', { originCode, destinationCode, departureDate, adults });
+        return;
       }
 
       if (returnDate && new Date(returnDate) < new Date(departureDate)) {
         toast.error("Return date cannot be earlier than departure date.");
-        return setLoading(false);
+        setLoading(false);
+        console.warn('[Flight Search] Invalid return date:', { departureDate, returnDate });
+        return;
       }
 
       // Validate currency before making the API call
       const validatedCurrencyCode = validateCurrencyCode(currencyCode) ? currencyCode : DEFAULT_CURRENCY;
+
+      // Log the data being sent to the backend
+      const backendPayload = {
+        originLocationCode: originCode,
+        destinationLocationCode: destinationCode,
+        departureDate,
+        returnDate,
+        adults,
+        children: validatedData.children,
+        infants: validatedData.infants,
+        max: max || 100,
+        currencyCode: validatedCurrencyCode,
+        travelClass,
+        page: page || 1,
+        limit: limit || 10
+      };
+      console.log('[Flight Search] Sending to backend:', backendPayload);
 
       // Build query parameters
       const queryParams = new URLSearchParams({
@@ -244,6 +260,8 @@ function SearchForm({ activeTab, onSearch, initialSearchParams }) {
       if (validatedData.children) queryParams.append("children", validatedData.children);
       if (validatedData.infants) queryParams.append("infants", validatedData.infants);
 
+      console.log('[Flight Search] Final API URL:', `${API_URL}/api/user/flightOffers?${queryParams.toString()}`);
+
       const response = await axios.get(`${API_URL}/api/user/flightOffers?${queryParams.toString()}`);
 
       setFlightOffers(response.data.data);
@@ -256,11 +274,12 @@ function SearchForm({ activeTab, onSearch, initialSearchParams }) {
         const errorMessages = err.errors.map(error => error.message).join(', ');
         toast.error(errorMessages);
         setError(errorMessages);
+        console.error('[Flight Search] Zod validation error:', err.errors);
       } else {
         // Handle other errors as before
         const message = err.response?.data?.message || "Something went wrong while fetching flight offers";
         setError(message);
-        console.error("Flight search error:", err);
+        console.error('[Flight Search] API error:', err);
       }
     } finally {
       setLoading(false);

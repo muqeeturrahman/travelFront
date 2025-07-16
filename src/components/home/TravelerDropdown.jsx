@@ -47,8 +47,20 @@ const TravelerDropdown = ({ flightData, handleInputChange, onClose, position }) 
           min={0}
           max={9}
           placeholder="0"
-          value={flightData.children === 0 ? '' : flightData.children}
-          onChange={handleInputChange}
+          value={typeof flightData.children === 'number' ? (flightData.children === 0 ? '' : flightData.children) : ''}
+          onChange={e => {
+            // Ensure the value is always a number or 0
+            const value = e.target.value === '' ? 0 : Number(e.target.value);
+            handleInputChange({
+              ...e,
+              target: {
+                ...e.target,
+                value: value,
+                name: 'children',
+                type: 'number'
+              }
+            });
+          }}
           className="w-16 border rounded-md px-2 py-1 text-center"
         />
       </div>
@@ -66,8 +78,20 @@ const TravelerDropdown = ({ flightData, handleInputChange, onClose, position }) 
           min={0}
           max={9}
           placeholder="0"
-          value={flightData.infants === 0 ? '' : flightData.infants}
-          onChange={handleInputChange}
+          value={typeof flightData.infants === 'number' ? (flightData.infants === 0 ? '' : flightData.infants) : ''}
+          onChange={e => {
+            // Ensure the value is always a number or 0
+            const value = e.target.value === '' ? 0 : Number(e.target.value);
+            handleInputChange({
+              ...e,
+              target: {
+                ...e.target,
+                value: value,
+                name: 'infants',
+                type: 'number'
+              }
+            });
+          }}
           className="w-16 border rounded-md px-2 py-1 text-center"
         />
       </div>

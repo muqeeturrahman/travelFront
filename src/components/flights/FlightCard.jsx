@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 import BookingModal from './BookingModal';
 import { DateTime } from 'luxon';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3008';
+const API_URL = import.meta.env.VITE_API_URL || 'https://travey-backend.vercel.app';
 const AMADEUS_API_URL = 'https://test.api.amadeus.com/v1';
 const AMADEUS_CLIENT_ID = 'OqEvtfnNdGtWZ73gmqX3Nosbmc8DfHtG';
 const AMADEUS_CLIENT_SECRET = 'fQ8gSfbPh0v9usjP';

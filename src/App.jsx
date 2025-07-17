@@ -7,6 +7,8 @@ import HotelListingCard from './components/search/HotelListingCard';
 import ConfirmationPage from './pages/ConfirmationPage';
 import ContactPage from './pages/ContactPage';
 import DealsPage from './pages/DealsPage';
+import CheckoutSuccessPage from './pages/CheckoutSuccessPage';
+import CheckoutCancelPage from './pages/CheckoutCancelPage';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -50,6 +52,8 @@ function App() {
           <Route path="/confirmation" element={<ConfirmationPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/deals" element={<DealsPage />} />
+          <Route path="/checkout-success" element={<CheckoutSuccessPage />} />
+          <Route path="/checkout-cancel" element={<CheckoutCancelPage />} />
         </Routes>
       </div>
     </Router>

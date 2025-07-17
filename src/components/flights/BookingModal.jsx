@@ -82,7 +82,14 @@ const BookingModal = ({ isOpen, onClose, onSubmit, flightData }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
-      onSubmit(bookingDetails);
+      onSubmit({ ...bookingDetails, paymentMethod: 'nowpayments' });
+    }
+  };
+
+  const handlePayPal = (e) => {
+    e.preventDefault();
+    if (validateForm()) {
+      onSubmit({ ...bookingDetails, paymentMethod: 'paypal' });
     }
   };
 
@@ -294,12 +301,20 @@ const BookingModal = ({ isOpen, onClose, onSubmit, flightData }) => {
               </select>
             </div>
 
-            <div className="mt-6">
+            <div className="mt-6 flex flex-col gap-2">
               <button
                 type="submit"
                 className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors"
               >
                 Proceed to Payment
+              </button>
+              <button
+                type="button"
+                onClick={handlePayPal}
+                className="w-full bg-yellow-400 text-black py-2 px-4 rounded-md hover:bg-yellow-500 transition-colors font-semibold flex items-center justify-center gap-2"
+              >
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="12" fill="#FFC439"/><path d="M7.5 12.5C7.5 10.0147 9.51472 8 12 8C14.4853 8 16.5 10.0147 16.5 12.5C16.5 14.9853 14.4853 17 12 17C9.51472 17 7.5 14.9853 7.5 12.5Z" fill="#003087"/><path d="M12 10.5C13.1046 10.5 14 11.3954 14 12.5C14 13.6046 13.1046 14.5 12 14.5C10.8954 14.5 10 13.6046 10 12.5C10 11.3954 10.8954 10.5 12 10.5Z" fill="white"/></svg>
+                Pay with PayPal
               </button>
             </div>
             <div className="flex flex-col sm:flex-row gap-2 mt-4">

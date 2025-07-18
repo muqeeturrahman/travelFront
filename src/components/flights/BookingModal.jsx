@@ -79,12 +79,12 @@ const BookingModal = ({ isOpen, onClose, onSubmit, flightData }) => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (validateForm()) {
-      onSubmit({ ...bookingDetails, paymentMethod: 'nowpayments' });
-    }
-  };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   if (validateForm()) {
+  //     onSubmit({ ...bookingDetails, paymentMethod: 'nowpayments' });
+  //   }
+  // };
 
   const handlePayPal = (e) => {
     e.preventDefault();
@@ -111,7 +111,7 @@ const BookingModal = ({ isOpen, onClose, onSubmit, flightData }) => {
 
         <h2 className="text-2xl font-bold mb-4 pt-2 px-2 sm:px-4">Complete Your Booking</h2>
         <div className="overflow-y-auto px-2 sm:px-4 pb-4 pt-0" style={{ maxHeight: '70vh' }}>
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form /*onSubmit={handleSubmit}*/ className="space-y-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
                 Full Name
@@ -302,12 +302,14 @@ const BookingModal = ({ isOpen, onClose, onSubmit, flightData }) => {
             </div>
 
             <div className="mt-6 flex flex-col gap-2">
+              {/*
               <button
                 type="submit"
                 className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors"
               >
                 Proceed to Payment
               </button>
+              */}
               <button
                 type="button"
                 onClick={handlePayPal}

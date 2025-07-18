@@ -29,6 +29,11 @@ const CheckoutSuccessPage = () => {
             { headers: { 'Content-Type': 'application/json' } }
           );
           const data = response.data;
+          // Store value and currency for conversion tracking
+          window.__lastCaptureOrderData = {
+            value: data.value || 1.0,
+            currency: data.currency || 'INR'
+          };
           console.log('[CheckoutSuccessPage] API response:', data);
           if (data.status === 'COMPLETED' || data.status === 'success') {
             setCaptured(true);
@@ -48,6 +53,25 @@ const CheckoutSuccessPage = () => {
     };
     captureOrder();
   }, [location.search]);
+
+  useEffect(() => {
+    if (captured) {
+      // Try to get value and currency from the last API response if available
+      let value = 1.0;
+      let currency = 'INR';
+      if (window.__lastCaptureOrderData) {
+        value = window.__lastCaptureOrderData.value || 1.0;
+        currency = window.__lastCaptureOrderData.currency || 'INR';
+      }
+      if (window.gtag) {
+        window.gtag('event', 'conversion', {
+          'send_to': 'AW-17359235623/bfiPCOG39fEaEKfUw9VA',
+          'value': value,
+          'currency': currency
+        });
+      }
+    }
+  }, [captured]);
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-green-50 p-4">

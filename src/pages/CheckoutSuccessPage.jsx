@@ -63,13 +63,32 @@ const CheckoutSuccessPage = () => {
         value = window.__lastCaptureOrderData.value || 1.0;
         currency = window.__lastCaptureOrderData.currency || 'INR';
       }
-      if (window.gtag) {
-        window.gtag('event', 'conversion', {
-          'send_to': 'AW-17359235623/bfiPCOG39fEaEKfUw9VA',
-          'value': value,
-          'currency': currency
-        });
+      // Prevent duplicate conversion events for the same orderID in this session
+      const orderID = getOrderID();
+      const firedKey = `conversion_fired_${orderID}`;
+      if (!orderID || sessionStorage.getItem(firedKey)) {
+        return;
       }
+      // Robust gtag firing with retry
+      let attempts = 0;
+      const maxAttempts = 5;
+      const delay = 400; // ms
+      function fireGtagConversion() {
+        if (window.gtag) {
+          window.gtag('event', 'conversion', {
+            'send_to': 'AW-17359235623/bfiPCOG39fEaEKfUw9VA',
+            'value': value,
+            'currency': currency
+          });
+          sessionStorage.setItem(firedKey, '1');
+        } else if (attempts < maxAttempts) {
+          attempts++;
+          setTimeout(fireGtagConversion, delay);
+        } else {
+          console.warn('[CheckoutSuccessPage] gtag not ready after retries, conversion event not sent');
+        }
+      }
+      fireGtagConversion();
     }
   }, [captured]);
 

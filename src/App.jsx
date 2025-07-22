@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import SearchPage from './pages/SearchPage';
 import FlightsPage from './pages/FlightsPage';
@@ -12,37 +12,66 @@ import CheckoutCancelPage from './pages/CheckoutCancelPage';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+
+function sendPageView(path) {
+  // Google Tag Manager
+  if (window.dataLayer) {
+    window.dataLayer.push({
+      event: 'pageview',
+      page: path,
+    });
+  }
+  // Google Analytics 4
+  if (window.gtag) {
+    window.gtag('event', 'page_view', {
+      page_path: path,
+    });
+  }
+  // Facebook Pixel
+  if (window.fbq) {
+    window.fbq('track', 'PageView');
+  }
+}
+
+// Tracks route changes for analytics
+function RouteChangeTracker() {
+  const location = useLocation();
+  React.useEffect(() => {
+    sendPageView(location.pathname);
+  }, [location]);
+  return null;
+}
+
 function App() {
   React.useEffect(() => {
     // Check if we're returning from payment
     const shouldReturnHome = localStorage.getItem('returnToHome');
     if (shouldReturnHome) {
-      // Clear the flag
       localStorage.removeItem('returnToHome');
-      // Navigate to confirmation page instead of home
       window.location.href = '/confirmation';
     }
   }, []);
 
   return (
     <Router>
-         <ToastContainer
-          position="top-right"
-          autoClose={3000}
-          hideProgressBar={false}
-          newestOnTop
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="light"
-          limit={1}
-          toastStyle={{
-            backgroundColor: 'white',
-            color: 'black',
-          }}
-        />
+      <RouteChangeTracker />
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+        limit={1}
+        toastStyle={{
+          backgroundColor: 'white',
+          color: 'black',
+        }}
+      />
       <div className="min-h-screen bg-gray-50">
         <Routes>
           <Route path="/" element={<HomePage />} />

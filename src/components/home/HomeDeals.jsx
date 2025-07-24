@@ -92,7 +92,7 @@ const HomeDeals = () => {
                         <img
                           src={deal.picture}
                           alt={deal.title}
-                          className="object-contain w-full h-full"
+                          className="object-cover w-full h-full"
                           style={{ background: 'white' }}
                         />
                       </div>

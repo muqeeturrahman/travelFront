@@ -54,7 +54,7 @@ const DealDetailModal = ({ dealId, onClose }) => {
                   style={{ background: 'white' }}
                 />
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-3">
                 <div>
                   <h3 className="text-xl font-semibold mb-3">About this tour</h3>
                   <p className="text-gray-700">{deal.aboutThisTour}</p>
@@ -62,21 +62,41 @@ const DealDetailModal = ({ dealId, onClose }) => {
                 <div>
                   <h3 className="text-xl font-semibold mb-3">Highlights</h3>
                   <ul className="list-disc list-inside text-gray-700 space-y-1">
-                    {deal.highlights.map((highlight, index) => <li key={index}>{highlight}</li>)}
+                    {deal.highlights && deal.highlights.map((highlight, index) => <li key={index}>{highlight}</li>)}
                   </ul>
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold mb-3">Included</h3>
                   <ul className="list-disc list-inside text-gray-700 space-y-1">
-                    {deal.included.map((item, index) => <li key={index}>{item}</li>)}
+                    {deal.included && deal.included.map((item, index) => <li key={index}>{item}</li>)}
                   </ul>
                 </div>
-                {/* <div>
+                <div>
                   <h3 className="text-xl font-semibold mb-3">Excluded</h3>
                   <ul className="list-disc list-inside text-gray-700 space-y-1">
-                    {deal.excluded.map((item, index) => <li key={index}>{item}</li>)}
+                    {deal.excluded && deal.excluded.map((item, index) => <li key={index}>{item}</li>)}
                   </ul>
-                </div> */}
+                </div>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-1">
+                <div>
+                  <h3 className="text-xl font-semibold mb-1">Flight Options</h3>
+                  <p className="text-gray-700 mb-2">{deal.flightOptions}</p>
+                  <h3 className="text-xl font-semibold mb-1">Hotel Stays</h3>
+                  <p className="text-gray-700 mb-2">{deal.hotelStays}</p>
+                  <h3 className="text-xl font-semibold mb-1">Duration</h3>
+                  <p className="text-gray-700 mb-2">{deal.duration}</p>
+                  <h3 className="text-xl font-semibold mb-1">Available From</h3>
+                  <p className="text-gray-700 mb-2">{deal.availableFrom}</p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-1">Price</h3>
+                  <p className="text-gray-700 mb-2">{deal.price} {deal.currency}</p>
+                  <h3 className="text-xl font-semibold mb-1">Booking Type</h3>
+                  <p className="text-gray-700 mb-2">{deal.bookingType}</p>
+                  <h3 className="text-xl font-semibold mb-1">Visa Required</h3>
+                  <p className="text-gray-700 mb-2">{deal.visaRequired ? 'Yes' : 'No'}</p>
+                </div>
               </div>
             </div>
           )}

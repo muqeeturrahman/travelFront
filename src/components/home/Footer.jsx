@@ -32,7 +32,7 @@ function Footer() {
               <li>Email: Info@flightonbudget.com</li>
               <li>Phone: +1 888 854 8426</li>
               <li>Whatsapp: +61480810519</li>
-              {/* <li>Address: 123 Travel St, City</li> */}
+              <li>Address: 1 Clarence St, Strathfield NSW 2135, Australia</li>
             </ul>
           </div>
 

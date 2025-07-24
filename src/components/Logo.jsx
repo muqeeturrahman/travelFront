@@ -4,7 +4,7 @@ function Logo() {
   return (
     <a href="/" className="flex items-center">
     <img 
-      src="/Think Travel Think Palki.png" 
+      src="/Think Travel Think Palki (2).png" 
       alt="Flight on Budget" 
       className="h-14 w-auto"
     />

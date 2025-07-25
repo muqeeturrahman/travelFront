@@ -207,7 +207,7 @@ const flightDeals = [
 ];
 
 const whatsappNumber = '+61480810519';
-const phoneNumber = '+61480810519';
+const phoneNumber = '+61290984324';
 
 function FlightPromos() {
   return (

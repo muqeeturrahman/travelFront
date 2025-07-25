@@ -24,6 +24,7 @@ function Footer() {
               {/* <li><a href="#" className="text-gray-400 hover:text-white">Hotels</a></li> */}
               <li><a href="#" className="text-gray-400 hover:text-white">Flights</a></li>
               <li><a href="/about" className="text-gray-400 hover:text-white">About Us</a></li>
+              <li><a href="/contact" className="text-gray-400 hover:text-white">Contact Us</a></li>
               <li><a href="/terms" className="text-gray-400 hover:text-white">Terms & Conditions</a></li>
               <li><a href="/faq" className="text-gray-400 hover:text-white">Frequently Asked Questions</a></li>
             </ul>

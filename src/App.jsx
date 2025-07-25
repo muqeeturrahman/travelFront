@@ -10,6 +10,8 @@ import ContactPage from './pages/ContactPage';
 import DealsPage from './pages/DealsPage';
 import CheckoutSuccessPage from './pages/CheckoutSuccessPage';
 import CheckoutCancelPage from './pages/CheckoutCancelPage';
+import TermsPage from './pages/TermsPage';
+import FAQPage from './pages/FAQPage';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -85,6 +87,8 @@ function App() {
           <Route path="/checkout-success" element={<CheckoutSuccessPage />} />
           <Route path="/checkout-cancel" element={<CheckoutCancelPage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/terms" element={<TermsPage />} />
+          <Route path="/faq" element={<FAQPage />} />
         </Routes>
       </div>
     </Router>

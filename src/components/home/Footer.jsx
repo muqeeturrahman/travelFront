@@ -10,7 +10,9 @@ function Footer() {
           <div>
             <FooterLogo />
             <p className="mt-4 text-gray-400">
-              Your trusted partner for travel and accommodation needs.
+            Palki Travel is all about delivering memorable travel experiences for young and old alike. We have developed with a simple objective in mind: To make travel easy and render you an exotic experience!
+
+
             </p>
           </div>
 
@@ -19,7 +21,7 @@ function Footer() {
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li><a href="#" className="text-gray-400 hover:text-white">Home</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white">Hotels</a></li>
+              {/* <li><a href="#" className="text-gray-400 hover:text-white">Hotels</a></li> */}
               <li><a href="#" className="text-gray-400 hover:text-white">Flights</a></li>
               <li><a href="/about" className="text-gray-400 hover:text-white">About Us</a></li>
               <li><a href="/terms" className="text-gray-400 hover:text-white">Terms & Conditions</a></li>

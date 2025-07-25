@@ -21,7 +21,7 @@ function Footer() {
               <li><a href="#" className="text-gray-400 hover:text-white">Home</a></li>
               <li><a href="#" className="text-gray-400 hover:text-white">Hotels</a></li>
               <li><a href="#" className="text-gray-400 hover:text-white">Flights</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white">About Us</a></li>
+              <li><a href="/about" className="text-gray-400 hover:text-white">About Us</a></li>
             </ul>
           </div>
 
@@ -29,7 +29,7 @@ function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
             <ul className="space-y-2 text-gray-400">
-              <li>Email: Info@flightonbudget.com</li>
+              <li>Email: support@palkitravel.com.au</li>
               <li>Phone: +1 888 854 8426</li>
               <li>Whatsapp: +61480810519</li>
               <li>Address: 1 Clarence St, Strathfield NSW 2135, Australia</li>

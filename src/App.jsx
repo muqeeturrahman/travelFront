@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
 import SearchPage from './pages/SearchPage';
 import FlightsPage from './pages/FlightsPage';
 import HotelListingCard from './components/search/HotelListingCard';
@@ -83,6 +84,7 @@ function App() {
           <Route path="/deals" element={<DealsPage />} />
           <Route path="/checkout-success" element={<CheckoutSuccessPage />} />
           <Route path="/checkout-cancel" element={<CheckoutCancelPage />} />
+          <Route path="/about" element={<AboutPage />} />
         </Routes>
       </div>
     </Router>

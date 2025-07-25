@@ -34,7 +34,7 @@ function Footer() {
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
             <ul className="space-y-2 text-gray-400">
               <li>Email: support@palkitravel.com</li>
-              <li>Phone: +1 888 854 8426</li>
+              <li>Phone: +61290984324</li>
               <li>Whatsapp: +61480810519</li>
               <li>Address: 1 Clarence St, Strathfield NSW 2135, Australia</li>
             </ul>

@@ -111,7 +111,7 @@ const DealDetailModal = ({ dealId, onClose }) => {
             Book on WhatsApp
           </a>
           <a
-            href={`tel:+61480810519`}
+            href={`tel:+61290984324`}
             className="bg-blue-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-300"
           >
             Call to Book

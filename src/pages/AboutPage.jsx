@@ -96,7 +96,7 @@ function AboutPage() {
       {/* Why Choose Us Section */}
       <div className="bg-white py-8 px-4 md:px-0 border-b border-gray-100">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold text-blue-800 mb-4 text-center">✅ Why Choose Us?</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-blue-800 mb-4 text-center"> Why Choose Us?</h2>
           <ul className="list-disc list-inside text-gray-700 mb-4 space-y-1 text-lg">
             <li>Transparent pricing with no gimmicks</li>
             <li>Real human support via WhatsApp and phone</li>

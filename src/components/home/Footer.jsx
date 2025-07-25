@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from '../Logo';
+import FooterLogo from '../shared/FooterLogo';
 
 function Footer() {
   return (
@@ -8,7 +8,7 @@ function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <Logo />
+            <FooterLogo />
             <p className="mt-4 text-gray-400">
               Your trusted partner for travel and accommodation needs.
             </p>
@@ -75,7 +75,9 @@ function Footer() {
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; 2024 Flight On Budget. All rights reserved.</p>
+          <p>Copyright &copy; 2025. All Rights Reserved by Palki Travels.
+
+</p>
         </div>
       </div>
     </footer>

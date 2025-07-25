@@ -4,10 +4,9 @@ function Logo() {
   return (
     <a href="/" className="flex items-center">
     <img 
-      src="/123.png" 
-      alt="Flight on Budget" 
-            // className="h-full sm:h-16 w-auto"
-      className="h-16 sm:h-16 w-auto"
+      src="/download (1).png" 
+      alt="paki" 
+      className="h-12 sm:h-12 w-auto"
     />
 
     </a>

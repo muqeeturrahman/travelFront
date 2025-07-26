@@ -88,7 +88,7 @@ function ContactPage() {
                   <h4 className="font-semibold mb-1">Phone</h4>
                   <p className="text-gray-600">
                     Main: +61290984324<br />
-                    Toll Free: 1-800-Flight On Budget
+                    {/* Toll Free: 1-800-Flight On Budget */}
                   </p>
                 </div>
               </div>
@@ -98,7 +98,7 @@ function ContactPage() {
                 <div>
                   <h4 className="font-semibold mb-1">Email</h4>
                   <p className="text-gray-600">
-                    Email: Info@flightonbudget.com<br />
+                    Email: support@palkitravel.com<br />
                     Phone: +61290984324<br />
                     Whatsapp: +61480810519
                   </p>

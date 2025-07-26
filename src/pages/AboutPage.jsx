@@ -56,13 +56,15 @@ function AboutPage() {
     <Layout>
       {/* Hero Section (now at the very top) */}
       <div className="bg-gradient-to-r from-blue-900 to-blue-600 py-12 text-white text-center">
-        <h1 className="text-4xl md:text-5xl font-extrabold mb-4">About Us</h1>
+        <h1 className="text-4xl md:text-5xl font-extrabold mb-4">About Palki Travel</h1>
         <p className="max-w-2xl mx-auto text-lg md:text-xl font-medium px-4">
-          We Love To Explore New Worldwide Destinations.<br/>
-          Welcome to Palki Travel Australia! We'll find the best Australia-India flight offers for you. Being the best travel agency in Australia, we're committed to providing experienced and novice travellers with life-changing adventures.
+            At Palki Travel, we believe travel is not just about destinations — it's about unforgettable experiences, meaningful moments, and seamless journeys.
+        </p><br />
+        <p className="max-w-2xl mx-auto text-lg md:text-xl font-medium px-4">
+            Founded with a passion for exploring the world and making travel accessible to everyone, Palki Travel has quickly grown into a trusted travel partner for thousands across Australia and beyond. Whether you're planning a tropical escape, a romantic getaway, or a group tour, we bring you affordable, all-inclusive packages with no hidden costs — just honest pricing and expert service.
         </p>
       </div>
-      {/* About Palki Travel Section (now at the very top) */}
+      {/* About Palki Travel Section (now at the very top)
       <div className="bg-white py-12 px-4 md:px-0 border-b border-gray-100">
         <div className="max-w-3xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-extrabold text-blue-900 mb-4">About Palki Travel</h1>
@@ -73,7 +75,7 @@ function AboutPage() {
             Founded with a passion for exploring the world and making travel accessible to everyone, Palki Travel has quickly grown into a trusted travel partner for thousands across Australia and beyond. Whether you're planning a tropical escape, a romantic getaway, or a group tour, we bring you affordable, all-inclusive packages with no hidden costs — just honest pricing and expert service.
           </p>
         </div>
-      </div>
+      </div> */}
 
       {/* What We Offer Section */}
       <div className="bg-gray-50 py-8 px-4 md:px-0 border-b border-gray-100">

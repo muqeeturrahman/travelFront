@@ -72,14 +72,14 @@ function ContactPage() {
             <div className="space-y-6">
               <div className="flex items-start space-x-4">
                 <MapPin className="text-blue-600 w-6 h-6 mt-1" />
-                {/* <div>
+                <div>
                   <h4 className="font-semibold mb-1">Address</h4>
                   <p className="text-gray-600">
-                    123 Travel Street<br />
-                    Business District<br />
-                    New York, NY 10001
+                    1, Clarence St, Strathfield, NSW 2135 Sydney, Australia<br />
+                    {/* Business District<br />
+                    New York, NY 10001 */}
                   </p>
-                </div> */}
+                </div>
               </div>
 
               <div className="flex items-start space-x-4">

@@ -104,7 +104,7 @@ export const reviews = [
     location: "Gold Coast, Australia",
     rating: 4,
     date: "2024-03-04",
-    comment: "Great experience with Flight On Budget. Easy booking process and competitive prices.",
+    comment: "Great experience with Palki Travel. Easy booking process and competitive prices.",
     image: "https://randomuser.me/api/portraits/women/12.jpg"
   },
   {
@@ -284,7 +284,7 @@ export const reviews = [
     location: "Sydney, Australia",
     rating: 5,
     date: "2024-03-14",
-    comment: "Used Flight On Budget for our family vacation to Bali. Great prices and excellent flight options. Will definitely use again!",
+    comment: "Used Palki Travel for our family vacation to Bali. Great prices and excellent flight options. Will definitely use again!",
     image: "https://randomuser.me/api/portraits/men/2.jpg"
   },
   {
@@ -320,7 +320,7 @@ export const reviews = [
     location: "Brisbane, Australia",
     rating: 5,
     date: "2024-03-10",
-    comment: "Booked multiple flights through Flight On Budget. Always reliable and best prices in the market.",
+    comment: "Booked multiple flights through Palki Travel. Always reliable and best prices in the market.",
     image: "https://randomuser.me/api/portraits/men/6.jpg"
   },
   {

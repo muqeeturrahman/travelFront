@@ -24,7 +24,7 @@ function ContactPage() {
             <div>
               <h2 className="text-2xl font-bold mb-6">About </h2>
               <p className="text-gray-600 mb-4">
-                Flight On Budget is your premier travel partner, offering comprehensive travel solutions 
+                Palki travel is your premier travel partner, offering comprehensive travel solutions 
                 for both leisure and business travelers. With years of experience in the industry, 
                 we pride ourselves on delivering exceptional service and unforgettable travel experiences.
               </p>

@@ -12,7 +12,7 @@ function Navbar() {
     { to: '/deals', text: 'DESTINATIONS' },
     // { to: '/payment', text: 'Payment' },
     { to: '/contact', text: 'CONTACT US' },
-    { to: '/about', text: 'ABOUT US' },
+
     { to: '/terms', text: 'TERMS & CONDITIONS' },
     { to: '/faq', text: 'FREQUENTLY ASKED QUESTIONS' },
 

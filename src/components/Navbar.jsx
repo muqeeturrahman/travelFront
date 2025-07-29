@@ -24,10 +24,10 @@ function Navbar() {
     <>
       {/* Top Contact Bar */}
       <div className="w-full bg-[#23242a] text-white text-xs sm:text-sm py-2 flex justify-center items-center">
-        <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+        {/* <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
           <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z" />
-        </svg>
-        <span>1, Clarence St, Strathfield, NSW 2135 Sydney, Australia</span>
+        </svg> */}
+        <span>This is an independent website with no ties to any other entity.</span>
       </div>
 
       {/* Main Navbar */}

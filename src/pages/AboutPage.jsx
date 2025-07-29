@@ -25,7 +25,6 @@ function useCountUp(target, duration = 1500, trigger = true) {
 }
 
 function AboutPage() {
-  // Intersection Observer for stats
   const statsRef = useRef(null);
   const [statsVisible, setStatsVisible] = useState(false);
 
@@ -45,7 +44,6 @@ function AboutPage() {
     return () => observer.disconnect();
   }, []);
 
-  // Animated numbers (only animate when statsVisible)
   const years = useCountUp(5, 1500, statsVisible);
   const happy = useCountUp(50000, 1500, statsVisible);
   const tickets = useCountUp(75000, 1500, statsVisible);
@@ -54,15 +52,14 @@ function AboutPage() {
 
   return (
     <Layout>
-      {/* Hero Section (now at the very top) */}
       <div className="bg-gradient-to-r from-blue-900 to-blue-600 py-12 text-white text-center">
         <h1 className="text-4xl md:text-5xl font-extrabold mb-4">About Us</h1>
         <p className="max-w-2xl mx-auto text-lg md:text-xl font-medium px-4">
-          We Love To Explore New Worldwide Destinations.<br/>
-          Welcome to Palki Travel Australia! We'll find the best Australia-India flight offers for you. Being the best travel agency in Australia, we're committed to providing experienced and novice travellers with life-changing adventures.
+        We’re Passionate About Discovering Incredible Places Around the Globe.
+
+Welcome to Palki Travel! We specialize in securing the best airfare deals between Australia and India. As a trusted name in travel, we’re dedicated to helping both first-time flyers and seasoned globetrotters enjoy smooth, memorable journeys.
         </p>
       </div>
-      {/* About Palki Travel Section (now at the very top) */}
       <div className="bg-white py-12 px-4 md:px-0 border-b border-gray-100">
         <div className="max-w-3xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-extrabold text-blue-900 mb-4">About Palki Travel</h1>
@@ -74,8 +71,6 @@ function AboutPage() {
           </p>
         </div>
       </div>
-
-      {/* What We Offer Section */}
       <div className="bg-gray-50 py-8 px-4 md:px-0 border-b border-gray-100">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold text-blue-800 mb-4 text-center">🌍 What We Offer</h2>
@@ -92,8 +87,6 @@ function AboutPage() {
           </p>
         </div>
       </div>
-
-      {/* Why Choose Us Section */}
       <div className="bg-white py-8 px-4 md:px-0 border-b border-gray-100">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold text-blue-800 mb-4 text-center"> Why Choose Us?</h2>
@@ -108,14 +101,12 @@ function AboutPage() {
           </p>
         </div>
       </div>
-
-      {/* Explore Section (Stats) */}
       <div ref={statsRef} className="bg-white py-10 px-4 md:px-0">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-2xl md:text-3xl font-bold mb-4 text-blue-900">Your Gateway to Australia-India Flights</h2>
           <p className="text-gray-700 mb-4">
-            Planning a trip from Australia to India? Palki Travel guarantees seamless cross-continental transfers. We link key cities like Sydney, Melbourne, Brisbane, Delhi, and more with our vast network. We’ll look for the best <b>Australia-India flight</b> offers for you, whether you’re travelling to see family or explore new places.
-          </p>
+          Flying from Australia to India? We make it effortless.
+          At Palki Travel, we connect major cities like Sydney, Melbourne, Brisbane, Delhi, and beyond with great-value airfares and smooth planning. Whether you’re reuniting with loved ones or setting off on an adventure, we’ll help you find the most convenient and affordable flights.          </p>
           <div className="flex flex-wrap justify-center gap-6 mt-8">
             <div className="flex flex-col items-center">
               <span className="text-3xl font-bold text-blue-700">{years}+</span>
@@ -140,8 +131,6 @@ function AboutPage() {
           </div>
         </div>
       </div>
-
-      {/* Value Proposition Section */}
       <div className="bg-gray-50 py-10 px-4 md:px-0">
         <div className="max-w-4xl mx-auto grid md:grid-cols-3 gap-8 text-center">
           <div className="bg-white rounded-lg shadow p-6 flex flex-col items-center">
@@ -176,8 +165,6 @@ function AboutPage() {
           </div>
         </div>
       </div>
-
-      {/* Testimonial Section (static sample) */}
       <div className="bg-white py-10 px-4 md:px-0">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold text-blue-900 mb-6 text-center">What Our Customers Say</h2>
@@ -205,4 +192,4 @@ function AboutPage() {
   );
 }
 
-export default AboutPage; 
+export default AboutPage;

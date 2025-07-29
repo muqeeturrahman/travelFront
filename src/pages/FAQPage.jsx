@@ -14,10 +14,10 @@ function FAQPage() {
           <div>
             <h2 className="text-lg font-bold text-blue-800 mb-1">2. What is your company’s ABN and registration information?</h2>
             <div className="text-gray-700 space-y-1">
-              <div>Company Name: Palki Group Pty Ltd</div>
-              <div>Trading Name: Palki Travel</div>
-              <div>ABN: 46 642 305 299</div>
-              <div>Registered Address: Unit 14, 1–3 Clarence Street, Strathfield NSW 2135, Australia</div>
+              <div>Company Name: Palki travel</div>
+              {/* <div>Trading Name: Palki Travel</div> */}
+              {/* <div>ABN: 46 642 305 299</div> */}
+              <div>Registered Address: Sydney, Australia</div>
               <div>Email: support@palkitravel.com</div>
               <div>Phone/WhatsApp: +61 480 810 519</div>
             </div>

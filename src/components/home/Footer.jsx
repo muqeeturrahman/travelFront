@@ -8,9 +8,10 @@ function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <FooterLogo />
+            {/* <FooterLogo /> */}
             <p className="mt-4 text-gray-400">
-            Palki Travel is all about delivering memorable travel experiences for young and old alike. We have developed with a simple objective in mind: To make travel easy and render you an exotic experience!
+            At Palki Travel, we’re passionate about creating unforgettable journeys for every age and stage of life. Our mission is simple — to make travel smooth, exciting, and filled with unique moments that leave a lasting impression.
+
 
 
             </p>
@@ -37,7 +38,7 @@ function Footer() {
               <li>Email: support@palkitravel.com</li>
               <li>Phone: +61290984324</li>
               <li>Whatsapp: +61480810519</li>
-              <li>Address: 1 Clarence St, Strathfield NSW 2135, Australia</li>
+              {/* <li>Address: 1 Clarence St, Strathfield NSW 2135, Australia</li> */}
             </ul>
           </div>
 
@@ -78,7 +79,7 @@ function Footer() {
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>Copyright &copy; 2025. All Rights Reserved by Palki Travels.
+          <p> &copy; 2025 Palki Travels. Unauthorized use is prohibited.
 
 </p>
         </div>

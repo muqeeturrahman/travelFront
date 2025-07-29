@@ -11,25 +11,25 @@ function Hero() {
   // Sample banner images - replace these URLs with your actual banner images
   const bannerImages = [
     {
-      url: "https://palkitravel.com.au/wp-content/uploads/al_opt_content/IMAGE/palkitravel.com.au/wp-content/uploads/2025/07/referearn.webp.bv.webp?bv_host=palkitravel.com.au",
-      title: "Find Next Place To Visit",
-      subtitle: "Earn $10 for every successful referral"
+      url: "https://wdtletsgo.wpengine.com/wp-content/uploads/2024/07/Slider-2-Image-4.jpg",
+      title: "Looking for affordable flights and curated tours?",
+      subtitle: "We’ve got you covered with the best travel solutions."
     },
     {
-      url: "https://palkitravel.com.au/wp-content/uploads/al_opt_content/IMAGE/palkitravel.com.au/wp-content/uploads/2025/06/time-to-travel-banner.jpg.bv_resized_desktop.jpg.bv.webp?bv_host=palkitravel.com.au&quot",
-      title: "Fly to India Super Sale",
-      subtitle: "Fares starting from $499"
+      url: "/artificial-tree-line-with-travel-elements.jpg",
+      title: "Limited-Time Flight Deals",
+      subtitle: "Book Now – Flights from $420"
     },
     {
-      url: "https://palkitravel.com.au/wp-content/uploads/al_opt_content/IMAGE/palkitravel.com.au/wp-content/uploads/2025/07/referearn.webp.bv.webp?bv_host=palkitravel.com.au",
-      title: "Discover Amazing Destinations",
-      subtitle: "Book your dream vacation today"
+      url: "https://wdtletsgo.wpengine.com/wp-content/uploads/2024/07/Slider-2-Image-4.jpg",
+      title: "Explore Top Travel Spots Around the World",
+      subtitle: "Start Planning the Trip You've Always Wanted"
     },
-    {
-      url: "https://palkitravel.com.au/wp-content/uploads/al_opt_content/IMAGE/palkitravel.com.au/wp-content/uploads/2025/06/time-to-travel-banner.jpg.bv_resized_desktop.jpg.bv.webp?bv_host=palkitravel.com.au&quot",
-      title: "Best Travel Deals",
-      subtitle: "Exclusive offers for our customers"
-    }
+    // {
+    //   url: "https://palkitravel.com.au/wp-content/uploads/al_opt_content/IMAGE/palkitravel.com.au/wp-content/uploads/2025/06/time-to-travel-banner.jpg.bv_resized_desktop.jpg.bv.webp?bv_host=palkitravel.com.au&quot",
+    //   title: "Best Travel Deals",
+    //   subtitle: "Exclusive offers for our customers"
+    // }
   ];
 
   // Auto-slide functionality

@@ -8,6 +8,7 @@ import HotelListingCard from './components/search/HotelListingCard';
 import ConfirmationPage from './pages/ConfirmationPage';
 import ContactPage from './pages/ContactPage';
 import DealsPage from './pages/DealsPage';
+import LeadsPage from './pages/LeadsPage';
 import CheckoutSuccessPage from './pages/CheckoutSuccessPage';
 import CheckoutCancelPage from './pages/CheckoutCancelPage';
 import TermsPage from './pages/TermsPage';
@@ -84,6 +85,7 @@ function App() {
           <Route path="/confirmation" element={<ConfirmationPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/deals" element={<DealsPage />} />
+          <Route path="/leads" element={<LeadsPage />} />
           <Route path="/checkout-success" element={<CheckoutSuccessPage />} />
           <Route path="/checkout-cancel" element={<CheckoutCancelPage />} />
           <Route path="/about" element={<AboutPage />} />

@@ -11,11 +11,11 @@ function TermsPage() {
           <div className="flex justify-center mb-4">
             <Logo />
           </div>
-          <p className="text-gray-600 mb-2 text-center">Effective Date: 1 February 2021</p>
+          <p className="text-gray-600 mb-2 text-center">Effective Date: 20 December 2022</p>
           <div className="mb-6 text-center text-gray-700">
-            <div>Business Name: <b>Palki Group Pty Ltd (Trading as Palki Travel)</b></div>
-            <div>ABN: 46 642 305 299</div>
-            <div>Registered Address: Unit 14, 1–3 Clarence Street, Strathfield NSW 2135, Australia</div>
+            <div>Business Name: <b>Palki Travel</b></div>
+            {/* <div>ABN: 46 642 305 299</div> */}
+            <div>Registered Address: Sydney,Australia</div>
             <div className="flex justify-center items-center gap-2 mt-2">
               {/* Email Icon */}
               <svg className="w-5 h-5 text-blue-700 inline-block" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="M22 6l-10 7L2 6" /></svg>

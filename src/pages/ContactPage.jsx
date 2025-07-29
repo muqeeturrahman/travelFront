@@ -75,7 +75,7 @@ function ContactPage() {
                 <div>
                   <h4 className="font-semibold mb-1">Address</h4>
                   <p className="text-gray-600">
-                    1, Clarence St, Strathfield, NSW 2135 Sydney, Australia<br />
+                    Sydney, Australia<br />
                     {/* Business District<br />
                     New York, NY 10001 */}
                   </p>

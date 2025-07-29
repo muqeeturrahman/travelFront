@@ -4,7 +4,7 @@ function Logo() {
   return (
     <a href="/" className="flex items-center">
     <img 
-      src="/PALKI TRAVEL Logo - New-05.png" 
+      src="/image.png" 
       alt="paki" 
       className="h-16 sm:h-16 w-auto"
     />

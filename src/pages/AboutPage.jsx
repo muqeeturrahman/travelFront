@@ -103,7 +103,7 @@ Welcome to Palki Travel! We specialize in securing the best airfare deals betwee
       </div>
       <div ref={statsRef} className="bg-white py-10 px-4 md:px-0">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-blue-900">Your Gateway to Australia-India Flights</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-blue-900">From Australia to India and Everywhere In Between</h2>
           <p className="text-gray-700 mb-4">
           Flying from Australia to India? We make it effortless.
           At Palki Travel, we connect major cities like Sydney, Melbourne, Brisbane, Delhi, and beyond with great-value airfares and smooth planning. Whether you’re reuniting with loved ones or setting off on an adventure, we’ll help you find the most convenient and affordable flights.          </p>
@@ -165,7 +165,7 @@ Welcome to Palki Travel! We specialize in securing the best airfare deals betwee
           </div>
         </div>
       </div>
-      <div className="bg-white py-10 px-4 md:px-0">
+      {/* <div className="bg-white py-10 px-4 md:px-0">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold text-blue-900 mb-6 text-center">What Our Customers Say</h2>
           <div className="grid md:grid-cols-2 gap-8">
@@ -187,7 +187,31 @@ Welcome to Palki Travel! We specialize in securing the best airfare deals betwee
             </div>
           </div>
         </div>
+      </div> */}
+      <div className="bg-white py-10 px-4 md:px-0">
+  <div className="max-w-4xl mx-auto">
+    <h2 className="text-2xl font-bold text-blue-900 mb-6 text-center">Real Voices from Our Travelers</h2>
+    <div className="grid md:grid-cols-2 gap-8">
+      <div className="bg-gray-50 rounded-lg shadow p-6">
+        <p className="text-gray-700 italic mb-2">“The team was incredibly responsive and found me a great deal quickly. Everything was smooth and stress-free.”</p>
+        <span className="font-semibold text-blue-700">– R. Verma</span>
       </div>
+      <div className="bg-gray-50 rounded-lg shadow p-6">
+        <p className="text-gray-700 italic mb-2">“Booking my international flight was effortless. Friendly service and excellent follow-up throughout.”</p>
+        <span className="font-semibold text-blue-700">– N. Kumar</span>
+      </div>
+      <div className="bg-gray-50 rounded-lg shadow p-6">
+        <p className="text-gray-700 italic mb-2">“I needed flexibility with my itinerary, and the staff delivered exactly that. Grateful for their patience and attention.”</p>
+        <span className="font-semibold text-blue-700">– S. Muthyam</span>
+      </div>
+      <div className="bg-gray-50 rounded-lg shadow p-6">
+        <p className="text-gray-700 italic mb-2">“Great service! Found me a solid fare in no time. Would definitely recommend to anyone looking to travel.”</p>
+        <span className="font-semibold text-blue-700">– T. Pereira</span>
+      </div>
+    </div>
+  </div>
+</div>
+
     </Layout>
   );
 }

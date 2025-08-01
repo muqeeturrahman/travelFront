@@ -24,7 +24,7 @@ function ContactPage() {
             <div>
               <h2 className="text-2xl font-bold mb-6">About </h2>
               <p className="text-gray-600 mb-4">
-                Palki travel is your premier travel partner, offering comprehensive travel solutions 
+                Flight On Budget is your premier travel partner, offering comprehensive travel solutions 
                 for both leisure and business travelers. With years of experience in the industry, 
                 we pride ourselves on delivering exceptional service and unforgettable travel experiences.
               </p>
@@ -98,7 +98,7 @@ function ContactPage() {
                 <div>
                   <h4 className="font-semibold mb-1">Email</h4>
                   <p className="text-gray-600">
-                    Email: support@palkitravel.com<br />
+                    Email: Info@flightonbudget.com<br />
                     Phone: +61290984324<br />
                     Whatsapp: +61480810519
                   </p>

@@ -147,7 +147,7 @@ function LeadsPage() {
         </button>
         
         <p className="text-xs text-gray-500 text-center">
-          By subscribing, you agree to receive marketing emails from Palki Travel. 
+          By subscribing, you agree to receive marketing emails from Flight On Budget. 
           You can unsubscribe at any time.
         </p>
       </form>
@@ -205,7 +205,7 @@ function LeadsPage() {
               Trusted by Travelers Worldwide
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Join thousands of satisfied customers who trust Palki Travel for their booking needs
+              Join thousands of satisfied customers who trust Flight On Budget for their booking needs
             </p>
           </div>
           
@@ -468,7 +468,7 @@ function LeadsPage() {
               </div>
               <div className="flex items-center">
                 <Mail className="w-5 h-5 mr-2 text-blue-400" />
-                <span>support@palkitravel.com</span>
+                <span>Info@flightonbudget.com</span>
               </div>
               <div className="flex items-center">
                 <Globe className="w-5 h-5 mr-2 text-blue-400" />

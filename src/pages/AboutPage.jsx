@@ -57,17 +57,17 @@ function AboutPage() {
         <p className="max-w-2xl mx-auto text-lg md:text-xl font-medium px-4">
         We’re Passionate About Discovering Incredible Places Around the Globe.
 
-Welcome to Palki Travel! We specialize in securing the best airfare deals between Australia and India. As a trusted name in travel, we’re dedicated to helping both first-time flyers and seasoned globetrotters enjoy smooth, memorable journeys.
+Welcome to Flight On Budget! We specialize in securing the best airfare deals between Australia and India. As a trusted name in travel, we’re dedicated to helping both first-time flyers and seasoned globetrotters enjoy smooth, memorable journeys.
         </p>
       </div>
       <div className="bg-white py-12 px-4 md:px-0 border-b border-gray-100">
         <div className="max-w-3xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-blue-900 mb-4">About Palki Travel</h1>
+          <h1 className="text-4xl md:text-5xl font-extrabold text-blue-900 mb-4">About Flight On Budget</h1>
           <p className="text-lg text-gray-700 mb-4">
-            At Palki Travel, we believe travel is not just about destinations — it's about unforgettable experiences, meaningful moments, and seamless journeys.
+            At Flight On Budget, we believe travel is not just about destinations — it's about unforgettable experiences, meaningful moments, and seamless journeys.
           </p>
           <p className="text-gray-700 mb-6">
-            Founded with a passion for exploring the world and making travel accessible to everyone, Palki Travel has quickly grown into a trusted travel partner for thousands across Australia and beyond. Whether you're planning a tropical escape, a romantic getaway, or a group tour, we bring you affordable, all-inclusive packages with no hidden costs — just honest pricing and expert service.
+            Founded with a passion for exploring the world and making travel accessible to everyone, Flight On Budget has quickly grown into a trusted travel partner for thousands across Australia and beyond. Whether you're planning a tropical escape, a romantic getaway, or a group tour, we bring you affordable, all-inclusive packages with no hidden costs — just honest pricing and expert service.
           </p>
         </div>
       </div>
@@ -97,7 +97,7 @@ Welcome to Palki Travel! We specialize in securing the best airfare deals betwee
             <li>100% commitment to your satisfaction</li>
           </ul>
           <p className="text-gray-700 text-center">
-            Whether you're flying solo or planning for the whole family, Palki Travel is here to make your next trip simple, affordable, and memorable.
+            Whether you're flying solo or planning for the whole family, Flight On Budget is here to make your next trip simple, affordable, and memorable.
           </p>
         </div>
       </div>
@@ -106,7 +106,7 @@ Welcome to Palki Travel! We specialize in securing the best airfare deals betwee
           <h2 className="text-2xl md:text-3xl font-bold mb-4 text-blue-900">From Australia to India and Everywhere In Between</h2>
           <p className="text-gray-700 mb-4">
           Flying from Australia to India? We make it effortless.
-          At Palki Travel, we connect major cities like Sydney, Melbourne, Brisbane, Delhi, and beyond with great-value airfares and smooth planning. Whether you’re reuniting with loved ones or setting off on an adventure, we’ll help you find the most convenient and affordable flights.          </p>
+          At Flight On Budget, we connect major cities like Sydney, Melbourne, Brisbane, Delhi, and beyond with great-value airfares and smooth planning. Whether you’re reuniting with loved ones or setting off on an adventure, we’ll help you find the most convenient and affordable flights.          </p>
           <div className="flex flex-wrap justify-center gap-6 mt-8">
             <div className="flex flex-col items-center">
               <span className="text-3xl font-bold text-blue-700">{years}+</span>
@@ -170,11 +170,11 @@ Welcome to Palki Travel! We specialize in securing the best airfare deals betwee
           <h2 className="text-2xl font-bold text-blue-900 mb-6 text-center">What Our Customers Say</h2>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-gray-50 rounded-lg shadow p-6">
-              <p className="text-gray-700 italic mb-2">“Sudarshana helped me in booking my tickets. She is very professional and helpful in her work. Highly recommended. Thank you Palki Travel.”</p>
+              <p className="text-gray-700 italic mb-2">“Sudarshana helped me in booking my tickets. She is very professional and helpful in her work. Highly recommended. Thank you Flight On Budget.”</p>
               <span className="font-semibold text-blue-700">- Rohit Verma</span>
             </div>
             <div className="bg-gray-50 rounded-lg shadow p-6">
-              <p className="text-gray-700 italic mb-2">“Excellent experience with Palki Travel. Highly recommend them. Thank you Sudarshana for helping me in booking my ticket.”</p>
+              <p className="text-gray-700 italic mb-2">“Excellent experience with Flight On Budget. Highly recommend them. Thank you Sudarshana for helping me in booking my ticket.”</p>
               <span className="font-semibold text-blue-700">- Neeraj Kumar</span>
             </div>
             <div className="bg-gray-50 rounded-lg shadow p-6">

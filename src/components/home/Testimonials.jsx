@@ -18,7 +18,7 @@ function Testimonials() {
             What Our Customers Say
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Read trusted reviews from our customers about their flight booking experience with Palki Travel
+            Read trusted reviews from our customers about their flight booking experience with Flight On Budget
           </p>
         </div>
 

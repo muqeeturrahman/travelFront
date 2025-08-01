@@ -10,7 +10,7 @@ function Footer() {
           <div>
             {/* <FooterLogo /> */}
             <p className="mt-4 text-gray-400">
-            At Palki Travel, we’re passionate about creating unforgettable journeys for every age and stage of life. Our mission is simple — to make travel smooth, exciting, and filled with unique moments that leave a lasting impression.
+            At Flight On Budget, we’re passionate about creating unforgettable journeys for every age and stage of life. Our mission is simple — to make travel smooth, exciting, and filled with unique moments that leave a lasting impression.
 
 
 
@@ -35,7 +35,7 @@ function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
             <ul className="space-y-2 text-gray-400">
-              <li>Email: support@palkitravel.com</li>
+              <li>Email: Info@flightonbudget.com</li>
               <li>Phone: +61290984324</li>
               <li>Whatsapp: +61480810519</li>
               {/* <li>Address: 1 Clarence St, Strathfield NSW 2135, Australia</li> */}
@@ -79,7 +79,7 @@ function Footer() {
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p> &copy; 2025 Palki Travels. Unauthorized use is prohibited.
+          <p> &copy; 2025 Flight On Budgets. Unauthorized use is prohibited.
 
 </p>
         </div>

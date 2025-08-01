@@ -13,13 +13,13 @@ function TermsPage() {
           </div>
           <p className="text-gray-600 mb-2 text-center">Effective Date: 20 December 2022</p>
           <div className="mb-6 text-center text-gray-700">
-            <div>Business Name: <b>Palki Travel</b></div>
+            <div>Business Name: <b>Flight On Budget</b></div>
             {/* <div>ABN: 46 642 305 299</div> */}
             <div>Registered Address: Sydney,Australia</div>
             <div className="flex justify-center items-center gap-2 mt-2">
               {/* Email Icon */}
               <svg className="w-5 h-5 text-blue-700 inline-block" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="M22 6l-10 7L2 6" /></svg>
-              <a href="mailto:support@palkitravel.com" className="text-blue-700 underline">support@palkitravel.com</a>
+              <a href="mailto:Info@flightonbudget.com" className="text-blue-700 underline">Info@flightonbudget.com</a>
             </div>
             <div className="flex justify-center items-center gap-2 mt-1">
               {/* WhatsApp Icon */}
@@ -31,7 +31,7 @@ function TermsPage() {
           <ol className="list-decimal list-inside space-y-6 text-gray-800">
             <li>
               <b>Acceptance of Terms</b>
-              <p className="mt-1">By accessing or booking through Palki Travel, you agree to be bound by these Terms & Conditions. If you do not agree with any part of these terms, please refrain from using our services.</p>
+              <p className="mt-1">By accessing or booking through Flight On Budget, you agree to be bound by these Terms & Conditions. If you do not agree with any part of these terms, please refrain from using our services.</p>
             </li>
             <li>
               <b>Services We Provide</b>
@@ -67,20 +67,20 @@ function TermsPage() {
                 <li>No-Shows or Late Cancellations: No refund will be provided.</li>
                 <li>Refunds may take 7–21 business days, depending on third-party processing timelines.</li>
               </ul>
-              <p className="mt-1">For detailed refund terms, please contact: <a href="mailto:support@palkitravel.com" className="text-blue-700 underline">support@palkitravel.com</a></p>
+              <p className="mt-1">For detailed refund terms, please contact: <a href="mailto:Info@flightonbudget.com" className="text-blue-700 underline">Info@flightonbudget.com</a></p>
             </li>
             <li>
               <b>Changes to Bookings</b>
               <ul className="list-disc list-inside ml-6 mt-1">
                 <li>All changes must be requested in writing.</li>
                 <li>Changes are subject to availability, airline/hotel policies, and applicable fees.</li>
-                <li>A service fee may be applied by Palki Travel in addition to provider charges.</li>
+                <li>A service fee may be applied by Flight On Budget in addition to provider charges.</li>
               </ul>
             </li>
             <li>
               <b>Responsibilities & Liabilities</b>
               <ul className="list-disc list-inside ml-6 mt-1">
-                <li>Palki Travel acts as a travel booking agent and cannot be held responsible for:</li>
+                <li>Flight On Budget acts as a travel booking agent and cannot be held responsible for:</li>
                 <ul className="list-disc list-inside ml-10">
                   <li>Airline or provider cancellations, delays, or schedule changes</li>
                   <li>Missed connections or flights due to traveler error</li>
@@ -109,7 +109,7 @@ function TermsPage() {
                 <li>
                   <span className="inline-flex items-center">
                     <svg className="w-5 h-5 mr-1 text-blue-700 inline-block" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="M22 6l-10 7L2 6" /></svg>
-                    <a href="mailto:support@palkitravel.com" className="text-blue-700 underline">support@palkitravel.com</a>
+                    <a href="mailto:Info@flightonbudget.com" className="text-blue-700 underline">Info@flightonbudget.com</a>
                   </span>
                 </li>
                 <li>

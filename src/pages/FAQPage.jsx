@@ -9,7 +9,7 @@ function FAQPage() {
         <div className="space-y-8">
           <div>
             <h2 className="text-lg font-bold text-blue-800 mb-1">1. Who is Flight On Budget?</h2>
-            <p className="text-gray-700">Flight On Budget is a registered Australian travel business operated by Palki Group Pty Ltd, offering international and domestic flights, holiday packages, group tours, and custom itineraries.</p>
+            <p className="text-gray-700">Flight On Budget is a registered Australian travel business operated by Flight On Budget, offering international and domestic flights, holiday packages, group tours, and custom itineraries.</p>
           </div>
           <div>
             <h2 className="text-lg font-bold text-blue-800 mb-1">2. What is your company’s ABN and registration information?</h2>

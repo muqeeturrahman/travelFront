@@ -126,16 +126,16 @@ function ThankYouPage() {
                     href="tel:+61290984324" 
                     className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-200 border border-gray-200 hover:border-blue-300 hover:transform hover:-translate-y-1"
                   >
-                    <div className="flex items-center">
-                      <div className="bg-blue-100 rounded-full p-3 mr-4">
+                    <div className="flex items-start sm:items-center">
+                      <div className="bg-blue-100 rounded-full p-3 mr-4 flex-shrink-0">
                         <Phone className="h-6 w-6 text-blue-600" />
                       </div>
-                      <div className="flex-1">
+                      <div className="flex-1 min-w-0">
                         <p className="font-semibold text-lg text-gray-900">Call Us</p>
-                        <p className="text-blue-600 font-medium">+61290984324</p>
+                        <p className="text-blue-600 font-medium break-all sm:break-normal">+61290984324</p>
                         <p className="text-sm text-gray-500 mt-1">Available 24/7</p>
                       </div>
-                      <ArrowRight className="h-5 w-5 text-gray-400 group-hover:translate-x-1 transition-transform" />
+                      <ArrowRight className="h-5 w-5 text-gray-400 group-hover:translate-x-1 transition-transform flex-shrink-0 ml-2" />
                     </div>
                   </a>
                   
@@ -143,16 +143,16 @@ function ThankYouPage() {
                     href="mailto:Info@flightonbudget.com" 
                     className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-200 border border-gray-200 hover:border-blue-300 hover:transform hover:-translate-y-1"
                   >
-                    <div className="flex items-center">
-                      <div className="bg-green-100 rounded-full p-3 mr-4">
+                    <div className="flex items-start sm:items-center">
+                      <div className="bg-green-100 rounded-full p-3 mr-4 flex-shrink-0">
                         <Mail className="h-6 w-6 text-green-600" />
                       </div>
-                      <div className="flex-1">
+                      <div className="flex-1 min-w-0">
                         <p className="font-semibold text-lg text-gray-900">Email Support</p>
-                        <p className="text-green-600 font-medium">Info@flightonbudget.com</p>
+                        <p className="text-green-600 font-medium break-all sm:break-normal">Info@flightonbudget.com</p>
                         <p className="text-sm text-gray-500 mt-1">Quick response</p>
                       </div>
-                      <ArrowRight className="h-5 w-5 text-gray-400 group-hover:translate-x-1 transition-transform" />
+                      <ArrowRight className="h-5 w-5 text-gray-400 group-hover:translate-x-1 transition-transform flex-shrink-0 ml-2" />
                     </div>
                   </a>
                 </div>

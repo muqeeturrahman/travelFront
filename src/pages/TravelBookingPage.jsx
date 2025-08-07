@@ -746,7 +746,7 @@ function TravelBookingPage() {
               </a>
               
               <a 
-                href="mailto:Info@flightonbudget.com" 
+                href="mailto:info@flightonbudget.com" 
                 className="group bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/20 transition-all duration-200 border border-white/20 hover:border-white/40"
               >
                 <div className="flex items-center">
@@ -755,7 +755,7 @@ function TravelBookingPage() {
                   </div>
                   <div>
                     <p className="font-semibold text-lg">Email Support</p>
-                    <p className="text-blue-100">Info@flightonbudget.com</p>
+                    <p className="text-blue-100">info@flightonbudget.com</p>
                     {/* <p className="text-sm text-blue-200 mt-1">Quick response</p> */}
                   </div>
                   <ArrowRight className="ml-auto h-5 w-5 group-hover:translate-x-1 transition-transform" />

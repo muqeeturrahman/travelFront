@@ -3,7 +3,7 @@ import { Lock, Shield, CheckCircle, AlertCircle, CreditCard, Star, Users, Award,
 import Navbar from '../components/Navbar';
 import Footer from '../components/home/Footer';
 
-const API_URL = 'https://travey-backend.vercel.app';
+const API_URL = 'http://localhost:3008';
 
 const CustomPayPage = () => {
   const [amount, setAmount] = useState('');
@@ -31,16 +31,13 @@ const CustomPayPage = () => {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          amount: parseFloat(amount),
-          currency: 'USD',
-          description: description || 'Custom Payment',
+          value: parseFloat(amount),
+          currency_code: 'USD'
         })
       });
       const data = await response.json();
-      if (data.success && data.paymentUrl) {
-        window.location.href = data.paymentUrl;
-      } else if (data.success) {
-        setStatus('success');
+      if (data.approvalUrl) {
+        window.location.href = data.approvalUrl;
       } else {
         setStatus('error');
         setErrorMsg('Failed to create payment order.');

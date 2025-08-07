@@ -93,7 +93,7 @@ function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/terms" element={<TermsPage />} />
           <Route path="/faq" element={<FAQPage />} />
-          <Route path="/make-payment" element={<CustomPayPage />} />
+          <Route path="/custom-package" element={<CustomPayPage />} />
         </Routes>
       </div>
     </Router>

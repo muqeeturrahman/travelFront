@@ -17,7 +17,7 @@ function Navbar() {
 
     { to: '/terms', text: 'TERMS & CONDITIONS' },
     { to: '/faq', text: 'FREQUENTLY ASKED QUESTIONS' },
-    { to: '/booking-form', text: 'BOOKING FORM' },
+    // { to: '/booking-form', text: 'BOOKING FORM' },
     
 
     // { to: '/support', text: 'Help & Support' },

@@ -230,7 +230,7 @@ function TravelBookingPage() {
           {/* Form Container */}
           <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
             <form 
-              action="https://formsubmit.co/muqeeturrehman234@gmail.com" 
+              action="https://formsubmit.co/info@flightonbudget.com" 
               method="POST"
               onSubmit={handleSubmit}
               className="p-8 md:p-12"

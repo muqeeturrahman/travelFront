@@ -96,7 +96,7 @@ function App() {
           <Route path="/terms" element={<TermsPage />} />
           <Route path="/faq" element={<FAQPage />} />
           <Route path="/custom-package" element={<CustomPayPage />} />
-          <Route path="/travel-booking" element={<TravelBookingPage />} />
+          <Route path="/booking-form" element={<TravelBookingPage />} />
           <Route path="/thank-you" element={<ThankYouPage />} />
         </Routes>
       </div>

@@ -8,7 +8,7 @@ function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <FooterLogo />
+            {/* <FooterLogo /> */}
             <p className="mt-4 text-gray-400">
             At Flight On Budget, we’re passionate about creating unforgettable journeys for every age and stage of life. Our mission is simple — to make travel smooth, exciting, and filled with unique moments that leave a lasting impression.
 

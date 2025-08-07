@@ -12,6 +12,8 @@ function Navbar() {
     { to: '/deals', text: 'DESTINATIONS' },
     // { to: '/payment', text: 'Payment' },
     { to: '/contact', text: 'CONTACT US' },
+    // <Route path="/make-payment" element={<CustomPayPage />} />
+    { to: '/make-payment', text: 'MAKE PAYMENT' },
 
     { to: '/terms', text: 'TERMS & CONDITIONS' },
     { to: '/faq', text: 'FREQUENTLY ASKED QUESTIONS' },

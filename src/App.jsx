@@ -13,6 +13,8 @@ import CheckoutSuccessPage from './pages/CheckoutSuccessPage';
 import CheckoutCancelPage from './pages/CheckoutCancelPage';
 import TermsPage from './pages/TermsPage';
 import FAQPage from './pages/FAQPage';
+import CustomPayPage from './pages/CustomPayPage';
+
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -91,6 +93,7 @@ function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/terms" element={<TermsPage />} />
           <Route path="/faq" element={<FAQPage />} />
+          <Route path="/make-payment" element={<CustomPayPage />} />
         </Routes>
       </div>
     </Router>

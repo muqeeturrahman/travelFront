@@ -14,6 +14,8 @@ import CheckoutCancelPage from './pages/CheckoutCancelPage';
 import TermsPage from './pages/TermsPage';
 import FAQPage from './pages/FAQPage';
 import CustomPayPage from './pages/CustomPayPage';
+import TravelBookingPage from './pages/TravelBookingPage';
+import ThankYouPage from './pages/ThankYouPage';
 
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -94,6 +96,8 @@ function App() {
           <Route path="/terms" element={<TermsPage />} />
           <Route path="/faq" element={<FAQPage />} />
           <Route path="/custom-package" element={<CustomPayPage />} />
+          <Route path="/travel-booking" element={<TravelBookingPage />} />
+          <Route path="/thank-you" element={<ThankYouPage />} />
         </Routes>
       </div>
     </Router>

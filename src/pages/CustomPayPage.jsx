@@ -3,7 +3,7 @@ import { Lock, Shield, CheckCircle, AlertCircle, CreditCard, Star, Users, Award,
 import Navbar from '../components/Navbar';
 import Footer from '../components/home/Footer';
 
-const API_URL = 'http://localhost:3008';
+const API_URL = 'https://travey-backend.vercel.app';
 
 const CustomPayPage = () => {
   const [amount, setAmount] = useState('');
@@ -32,11 +32,16 @@ const CustomPayPage = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           value: parseFloat(amount),
-          currency_code: 'USD'
+          currency_code: 'USD',
+          return_url: `${window.location.origin}/checkout-success`,
+          cancel_url: `${window.location.origin}/checkout-cancel`
         })
       });
       const data = await response.json();
+      console.log('PayPal create-order response:', data);
       if (data.approvalUrl) {
+        // Store amount for later use in success page
+        sessionStorage.setItem('paymentAmount', amount);
         window.location.href = data.approvalUrl;
       } else {
         setStatus('error');
@@ -214,12 +219,6 @@ const CustomPayPage = () => {
 
                 </div>
                 {/* Status Messages */}
-                {status === 'processing' && (
-                  <div className="flex items-center justify-center mt-6 p-4 bg-blue-50 rounded-xl">
-                    <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-blue-600 mr-3"></div>
-                    <span className="text-blue-700 font-medium">Processing your payment...</span>
-                  </div>
-                )}
                 {status === 'success' && (
                   <div className="flex items-center justify-center mt-6 p-4 bg-green-50 rounded-xl">
                     <CheckCircle className="h-5 w-5 text-green-600 mr-3" />
@@ -231,7 +230,7 @@ const CustomPayPage = () => {
             {/* Right Column - Benefits */}
             <div className="space-y-8">
               <div>
-                <h3 className="text-3xl font-bold text-gray-900 mb-6">Why Choose TravelPay?</h3>
+                <h3 className="text-3xl font-bold text-gray-900 mb-6">Why Choose FlightsOnBudget?</h3>
                 <div className="grid gap-4">
                   {benefits.map((benefit, index) => (
                     <div key={index} className="flex items-center space-x-3">

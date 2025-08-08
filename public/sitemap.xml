@@ -1,113 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Homepage - Highest priority -->
+  <!-- Homepage -->
   <url>
     <loc>https://flightonbudget.com/</loc>
-    <lastmod>2024-01-15</lastmod>
+    <lastmod>2025-07-26</lastmod> <!-- 2 weeks ago -->
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
-  
-  <!-- Search page - High priority for travel booking -->
+
+  <!-- Search page -->
   <url>
     <loc>https://flightonbudget.com/search</loc>
-    <lastmod>2024-01-15</lastmod>
+    <lastmod>2025-05-09</lastmod> <!-- 3 months ago -->
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-  
-  <!-- Flights page - High priority for flight bookings -->
+
+  <!-- Flights page -->
   <url>
     <loc>https://flightonbudget.com/flights</loc>
-    <lastmod>2024-01-15</lastmod>
+    <lastmod>2025-05-09</lastmod> <!-- 3 months ago -->
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-  
-  <!-- Deals page - Medium-high priority for promotions -->
+
+  <!-- Deals page -->
   <url>
     <loc>https://flightonbudget.com/deals</loc>
-    <lastmod>2024-01-15</lastmod>
+    <lastmod>2025-07-26</lastmod> <!-- 2 weeks ago -->
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-  
-  <!-- Custom package page - Medium-high priority -->
+
+  <!-- Custom package page -->
   <url>
     <loc>https://flightonbudget.com/custom-package</loc>
-    <lastmod>2024-01-15</lastmod>
+    <lastmod>2025-08-08</lastmod> <!-- yesterday -->
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
-  <!-- Booking form page - Medium-high priority -->
+
+  <!-- Booking form page (TravelBookingPage) -->
   <url>
     <loc>https://flightonbudget.com/booking-form</loc>
-    <lastmod>2024-01-15</lastmod>
+    <lastmod>2025-08-08</lastmod> <!-- yesterday -->
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
-  <!-- About page - Medium priority -->
+
+  <!-- About page -->
   <url>
     <loc>https://flightonbudget.com/about</loc>
-    <lastmod>2024-01-15</lastmod>
+    <lastmod>2025-08-02</lastmod> <!-- last week -->
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-  
-  <!-- Contact page - Medium priority -->
+
+  <!-- Contact page -->
   <url>
     <loc>https://flightonbudget.com/contact</loc>
-    <lastmod>2024-01-15</lastmod>
+    <lastmod>2025-08-02</lastmod> <!-- last week -->
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-  
-  <!-- FAQ page - Medium priority -->
+
+  <!-- FAQ page -->
   <url>
     <loc>https://flightonbudget.com/faq</loc>
-    <lastmod>2024-01-15</lastmod>
+    <lastmod>2025-08-02</lastmod> <!-- last week -->
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-  
-  <!-- Terms page - Lower priority -->
+
+  <!-- Terms page -->
   <url>
     <loc>https://flightonbudget.com/terms</loc>
-    <lastmod>2024-01-15</lastmod>
+    <lastmod>2025-08-02</lastmod> <!-- last week -->
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
-  
-  <!-- Confirmation page - Lower priority (post-booking) -->
+
+  <!-- Confirmation page -->
   <url>
     <loc>https://flightonbudget.com/confirmation</loc>
-    <lastmod>2024-01-15</lastmod>
+    <lastmod>2025-05-09</lastmod> <!-- 3 months ago -->
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
-  
-  <!-- Thank you page - Lower priority (post-booking) -->
+
+  <!-- Thank you page -->
   <url>
     <loc>https://flightonbudget.com/thank-you</loc>
-    <lastmod>2024-01-15</lastmod>
+    <lastmod>2025-08-08</lastmod> <!-- yesterday -->
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
-  
-  <!-- Checkout success page - Lower priority (post-payment) -->
+
+  <!-- Checkout success page -->
   <url>
     <loc>https://flightonbudget.com/checkout-success</loc>
-    <lastmod>2024-01-15</lastmod>
+    <lastmod>2025-07-19</lastmod> <!-- 3 weeks ago -->
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
-  
-  <!-- Checkout cancel page - Lower priority (post-payment) -->
+
+  <!-- Checkout cancel page -->
   <url>
     <loc>https://flightonbudget.com/checkout-cancel</loc>
-    <lastmod>2024-01-15</lastmod>
+    <lastmod>2025-07-19</lastmod> <!-- 3 weeks ago -->
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>

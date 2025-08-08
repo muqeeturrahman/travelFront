@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Homepage - Highest priority -->
+  <url>
+    <loc>https://flightonbudget.com/</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Search page - High priority for travel booking -->
+  <url>
+    <loc>https://flightonbudget.com/search</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Flights page - High priority for flight bookings -->
+  <url>
+    <loc>https://flightonbudget.com/flights</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Hotel page - High priority for hotel bookings -->
+  <url>
+    <loc>https://flightonbudget.com/hotel</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Deals page - Medium-high priority for promotions -->
+  <url>
+    <loc>https://flightonbudget.com/deals</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Custom package page - Medium-high priority -->
+  <url>
+    <loc>https://flightonbudget.com/custom-package</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Booking form page - Medium-high priority -->
+  <url>
+    <loc>https://flightonbudget.com/booking-form</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- About page - Medium priority -->
+  <url>
+    <loc>https://flightonbudget.com/about</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- Contact page - Medium priority -->
+  <url>
+    <loc>https://flightonbudget.com/contact</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- FAQ page - Medium priority -->
+  <url>
+    <loc>https://flightonbudget.com/faq</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- Terms page - Lower priority -->
+  <url>
+    <loc>https://flightonbudget.com/terms</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  
+  <!-- Leads page - Lower priority -->
+  <url>
+    <loc>https://flightonbudget.com/leads</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  
+  <!-- Confirmation page - Lower priority (post-booking) -->
+  <url>
+    <loc>https://flightonbudget.com/confirmation</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <!-- Thank you page - Lower priority (post-booking) -->
+  <url>
+    <loc>https://flightonbudget.com/thank-you</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <!-- Checkout success page - Lower priority (post-payment) -->
+  <url>
+    <loc>https://flightonbudget.com/checkout-success</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <!-- Checkout cancel page - Lower priority (post-payment) -->
+  <url>
+    <loc>https://flightonbudget.com/checkout-cancel</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+</urlset>

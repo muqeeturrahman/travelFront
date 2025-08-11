@@ -30,7 +30,7 @@ function HomePage() {
         <meta property="og:title" content="Cheap Flights & Travel Packages | Flight On Budget" />
         <meta property="og:description" content="Affordable flights and packages for Australia & UAE travelers. No hidden fees, fast support." />
         <meta property="og:url" content="https://www.flightonbudget.com/" />
-        <meta property="og:image" content="https://www.flightonbudget.com/static/og/home-1200x630.jpg" />
+        <meta property="og:image" content="https://www.flightonbudget.com/Flight on Budget logo-00.svg" />
 
         <script type="application/ld+json">{JSON.stringify({
           '@context': 'https://schema.org',

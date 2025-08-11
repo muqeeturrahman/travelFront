@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Layout from '../components/Layout';
+import { Helmet } from 'react-helmet-async';
 import DealDetailModal from '../components/DealDetailModal';
 
 const DealsPage = () => {
@@ -57,6 +58,40 @@ const DealsPage = () => {
 
   return (
     <Layout>
+      <Helmet>
+        <title>Travel Deals & All-Inclusive Packages | Flight On Budget</title>
+        <meta name="description" content="Discover our handpicked travel packages for Bali, Thailand, Japan, Turkey, Maldives, and more — flights, hotels, transfers, and tours included. Departures from Australia & UAE cities." />
+        <link rel="canonical" href="https://www.flightonbudget.com/deals" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Travel Deals & All-Inclusive Packages | Flight On Budget" />
+        <meta property="og:description" content="All-inclusive travel deals for top destinations. No hidden fees, 24/7 WhatsApp support." />
+        <meta property="og:url" content="https://www.flightonbudget.com/deals" />
+        <meta property="og:image" content="https://www.flightonbudget.com/static/og/deals-1200x630.jpg" />
+
+        <script type="application/ld+json">{JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'CollectionPage',
+          name: 'Travel Deals & Packages',
+          url: 'https://www.flightonbudget.com/deals',
+          mainEntity: [
+            {
+              '@type': 'Product',
+              name: 'Bali 6 Nights / 7 Days Package',
+              image: 'https://www.flightonbudget.com/static/packages/bali.jpg',
+              description: 'Return flights, hotel, transfers, daily breakfast, and guided tours.',
+              brand: 'Flight On Budget',
+              offers: {
+                '@type': 'Offer',
+                priceCurrency: 'AUD',
+                price: '999',
+                availability: 'https://schema.org/InStock',
+                url: 'https://www.flightonbudget.com/deals'
+              }
+            }
+          ]
+        })}</script>
+      </Helmet>
       <div className="bg-gray-100">
         <div className="container mx-auto px-4 py-12">
           <div className="text-center mb-12">

@@ -1,10 +1,23 @@
 import React from 'react';
 import Layout from '../components/Layout';
+import { Helmet } from 'react-helmet-async';
 import Logo from '../components/Logo';
 
 function TermsPage() {
   return (
     <Layout>
+      <Helmet>
+        <title>Terms & Conditions | Flight On Budget</title>
+        <meta name="description" content="Read the terms and conditions governing bookings, payments, cancellations and support at Flight On Budget." />
+        <link rel="canonical" href="https://www.flightonbudget.com/terms" />
+        <meta name="robots" content="noindex,follow" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Terms & Conditions | Flight On Budget" />
+        <meta property="og:description" content="Booking, payment and cancellation terms for Flight On Budget." />
+        <meta property="og:url" content="https://www.flightonbudget.com/terms" />
+        <meta property="og:image" content="https://www.flightonbudget.com/static/og/terms-1200x630.jpg" />
+      </Helmet>
       <div className="container mx-auto px-4 py-12 max-w-3xl">
         <div className="bg-white rounded-xl shadow p-6">
           <h1 className="text-4xl font-extrabold text-blue-900 mb-2 text-center">Terms & Conditions</h1>

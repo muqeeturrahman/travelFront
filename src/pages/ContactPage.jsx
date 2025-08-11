@@ -1,11 +1,30 @@
 import React from 'react';
 import { Phone, Mail, MapPin, Plane, Car, Map, Package } from 'lucide-react';
 import Navbar from '../components/Navbar';
+import { Helmet } from 'react-helmet-async';
 import Footer from '../components/home/Footer';
 
 function ContactPage() {
   return (
     <div className="min-h-screen bg-gray-50">
+      <Helmet>
+        <title>Contact Flight On Budget — 24/7 WhatsApp & Email Support</title>
+        <meta name="description" content="Need help with bookings or packages? Contact Flight On Budget via WhatsApp, email or phone. We aim to respond within 30 minutes." />
+        <link rel="canonical" href="https://www.flightonbudget.com/contact" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Contact Flight On Budget — 24/7 Support" />
+        <meta property="og:description" content="WhatsApp, email and phone support for bookings and travel queries." />
+        <meta property="og:url" content="https://www.flightonbudget.com/contact" />
+        <meta property="og:image" content="https://www.flightonbudget.com/static/og/contact-1200x630.jpg" />
+
+        <script type="application/ld+json">{JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'ContactPage',
+          name: 'Contact Flight On Budget',
+          url: 'https://www.flightonbudget.com/contact'
+        })}</script>
+      </Helmet>
       <Navbar />
       
       {/* Hero Section */}

@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import Layout from '../components/Layout';
+import { Helmet } from 'react-helmet-async';
 
 function useCountUp(target, duration = 1500, trigger = true) {
   const [count, setCount] = useState(0);
@@ -52,6 +53,24 @@ function AboutPage() {
 
   return (
     <Layout>
+      <Helmet>
+        <title>About Flight On Budget — Affordable Flights & Packages</title>
+        <meta name="description" content="Learn how Flight On Budget helps travelers in Australia & the UAE find cheap flights and value-packed travel packages with 24/7 support." />
+        <link rel="canonical" href="https://www.flightonbudget.com/about" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="About Flight On Budget — Affordable Flights & Packages" />
+        <meta property="og:description" content="Who we are, how we work, and why travelers trust us for great-value trips." />
+        <meta property="og:url" content="https://www.flightonbudget.com/about" />
+        <meta property="og:image" content="https://www.flightonbudget.com/static/og/about-1200x630.jpg" />
+
+        <script type="application/ld+json">{JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'AboutPage',
+          name: 'About Flight On Budget',
+          url: 'https://www.flightonbudget.com/about'
+        })}</script>
+      </Helmet>
       <div className="bg-gradient-to-r from-blue-900 to-blue-600 py-12 text-white text-center">
         <h1 className="text-4xl md:text-5xl font-extrabold mb-4">About Us</h1>
         <p className="max-w-2xl mx-auto text-lg md:text-xl font-medium px-4">

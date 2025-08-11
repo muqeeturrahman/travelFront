@@ -1,9 +1,44 @@
 import React from 'react';
 import Layout from '../components/Layout';
+import { Helmet } from 'react-helmet-async';
 
 function FAQPage() {
   return (
     <Layout>
+      <Helmet>
+        <title>Flight On Budget FAQs — Booking, Payments, Packages</title>
+        <meta name="description" content="Answers to common questions about bookings, payments, refunds, itinerary changes and support response times." />
+        <link rel="canonical" href="https://www.flightonbudget.com/faq" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Flight On Budget FAQs — Booking, Payments, Packages" />
+        <meta property="og:description" content="Get answers fast: bookings, payments, refunds, changes and support." />
+        <meta property="og:url" content="https://www.flightonbudget.com/faq" />
+        <meta property="og:image" content="https://www.flightonbudget.com/static/og/faq-1200x630.jpg" />
+
+        <script type="application/ld+json">{JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: [
+            {
+              '@type': 'Question',
+              name: 'How do I book a package?',
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Choose a deal on our site or message us on WhatsApp. We’ll confirm availability and send a secure payment link.'
+              }
+            },
+            {
+              '@type': 'Question',
+              name: 'What payment methods do you accept?',
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'We accept major cards and country-specific payment options. Your payment is processed securely online.'
+              }
+            }
+          ]
+        })}</script>
+      </Helmet>
       <div className="container mx-auto px-4 py-12 max-w-3xl">
         <h1 className="text-4xl font-extrabold text-blue-900 mb-8 text-center">Frequently Asked Questions (FAQs)</h1>
         <div className="space-y-8">

@@ -37,7 +37,7 @@ function HomePage() {
           '@type': 'Organization',
           name: 'Flight On Budget',
           url: 'https://www.flightonbudget.com/',
-          logo: 'https://www.flightonbudget.com/static/brand/logo.svg',
+          logo: 'https://www.flightonbudget.com/Flight on Budget logo-00.svg',
           sameAs: [
             'https://www.facebook.com/profile.php?id=61578778865538',
             'https://www.instagram.com/flightonbudget_au/'
